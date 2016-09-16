@@ -1,4 +1,4 @@
-# Image in Material Design
+# Material AutoRotatingCarousel
 
 How do you instruct new users to your app?
 Google has a very cool concept: https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits
@@ -13,7 +13,7 @@ npm i --save react-swipeable-views react-motion
 ## Usage
 
 The usage is like the material-ui tabs. http://www.material-ui.com/#/components/tabs
-Create AutoRotatingCarousel as a main frame and add Slides as childrens.
+Create AutoRotatingCarousel as a main frame and add Slides as children.
 
 ```js
 import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel'
@@ -57,11 +57,11 @@ render() {
 
 ## AutoRotatingCarousel Properties
 
-|Name           |Type     |Default                                  |Description
-|---------------|---------|-----------------------------------------|--------------------------------
-|`label`*       | string  |                                         | Button text.
-|`open`*        | bool    |                                         | Controls whether the AutoRotatingCarousel is opened or not.
-|`onStart`*     | function|                                         | Fired when the user clicks the getting started button.
+|Name               |Type     |Default                                  |Description
+|-------------------|---------|-----------------------------------------|--------------------------------
+|`label`*           | string  |                                         | Button text.
+|`open`*            | bool    |                                         | Controls whether the AutoRotatingCarousel is opened or not.
+|`onStart`*         | function|                                         | Fired when the user clicks the getting started button.
 
 ## Slide Properties
 
@@ -73,7 +73,7 @@ render() {
 |`headline`*        | string  |                                         | Title for the slide.
 |`subhead`*         | string  |                                         | Text for the slide.
 
-* required property
+`* required property`
 
 ## License
 
