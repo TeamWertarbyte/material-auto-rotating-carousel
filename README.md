@@ -3,6 +3,7 @@
 How do you instruct new users to your app?
 Google has a very cool concept: https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits
 
+See the change log for more details: [Change log](https://github.com/TeamWertarbyte/material-auto-rotating-carousel/blob/master/CHANGELOG.md)
 
 ## Installation
 ```shell
