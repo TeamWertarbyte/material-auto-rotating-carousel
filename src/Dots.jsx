@@ -13,7 +13,7 @@ const styles = {
     marginRight: 3,
     float: 'left'
   },
-  dotInactiv: {
+  dotInactive: {
     width: 10,
     height: 10,
     background: 'rgba(255,255,255,0.5)',
@@ -24,35 +24,15 @@ const styles = {
 }
 
 export class Dots extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  renderDots(count, index) {
-    const dots = []
-    for (let i = 0; i < count; ++i) {
-      dots.push(this.renderDot(i === index))
-    }
-    return dots
-  }
-
-  renderDot(active) {
-    return (
-      <Paper
-        circle
-        zDepth={0}
-        style={active ? styles.dot : styles.dotInactiv}
-      />
-    )
-  }
-
   render() {
     const { count, index } = this.props
     const width = (count * 10) + (count * 6)
 
     return (
       <div style={{ ...this.props.style, ...styles.root, width }}>
-        {this.renderDots(count, index)}
+        {[...Array(count).keys()].map((i) => (
+          <Paper circle zDepth={0} style={i === index ? styles.dot : styles.dotInactive} />
+        ))}
       </div>
     )
   }
