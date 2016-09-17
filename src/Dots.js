@@ -3,10 +3,10 @@ import { Paper } from 'material-ui'
 
 const styles = {
   dot: {
-    width: 10,
-    height: 10,
+    width: 8,
+    height: 8,
     background: '#fff',
-    margin: '0 3px',
+    margin: '0 4px',
     float: 'left',
     transition: 'all 400ms cubic-bezier(0.4, 0.0, 0.2, 1)'
   }
