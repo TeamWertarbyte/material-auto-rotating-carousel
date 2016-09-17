@@ -42,6 +42,8 @@ export class AutoRotatingCarousel extends Component {
         {this.props.open ?
           <div>
             <AutoPlaySwipeableViews
+              autoplay={this.props.autoplay}
+              interval={this.props.interval}
               index={this.state.slideIndex}
               onChangeIndex={(value) => this.handleChange(value)}
               slideStyle={{ width: '100%', height: '100vh' }}
@@ -67,7 +69,9 @@ export class AutoRotatingCarousel extends Component {
 }
 
 AutoRotatingCarousel.propTypes = {
-  open: PropTypes.bool,
+  autoplay: PropTypes.bool,
+  interval: PropTypes.number,
   label: PropTypes.string.isRequired,
-  onStart: PropTypes.func
+  onStart: PropTypes.func,
+  open: PropTypes.bool
 }
