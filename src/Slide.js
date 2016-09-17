@@ -47,6 +47,7 @@ export class Slide extends Component {
       title,
       titleStyle
     } = this.props
+
     return (
       <div style={{ ...styles.root, ...contentStyle }}>
         <div style={{ ...styles.mediaBackground, ...mediaBackgroundStyle }}>
