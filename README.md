@@ -1,9 +1,8 @@
 # Material AutoRotatingCarousel
 
-How do you introduce new users to your app?
-Google has a very cool concept: https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits
+So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits)! 
 
-See the change log for more details: [Change log](https://github.com/TeamWertarbyte/material-auto-rotating-carousel/blob/master/CHANGELOG.md)
+This project implements such a carousel for [material-ui](https://material-ui.com). See [the storybook](https://teamwertarbyte.github.io/material-auto-rotating-carousel) for an interactive demo.
 
 ![Demo](demo.gif)
 
@@ -59,33 +58,33 @@ render() {
 }
 ```
 
-## AutoRotatingCarousel Properties
+### AutoRotatingCarousel Properties
 
-|Name               |Type     |Default                                  |Description
-|-------------------|---------|-----------------------------------------|--------------------------------
-|`autoplay`         | bool    | true                                    | If `false`, the auto play behavior is disabled.
-|`interval`         | integer | 3000                                    | Delay between auto play transitions (in ms).
-|`label`*           | string  |                                         | Button text.
-|`mobile`           | bool    | false                                   | If `true`, the screen width and height is filled.
-|`open`             | bool    | false                                   | Controls whether the AutoRotatingCarousel is opened or not.
-|`onStart`          | function|                                         | Fired when the user clicks the getting started button.
+|Name            |Type        |Default     |Description
+|----------------|------------|------------|--------------------------------
+|autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
+|interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
+|label*          | `string`   |            | Button text.
+|mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
+|open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
+|onStart         | `function` |            | Fired when the user clicks the getting started button.
 
-## Slide Properties
+### Slide Properties
 
-|Name                   |Type     |Default                                  |Description
-|-----------------------|---------|-----------------------------------------|--------------------------------
-|`contentStyle`         | object  |                                         | Override the inline-styles of the content.
-|`media`*               | node    |                                         | Object to display in the upper half.
-|`mediaBackgroundStyle` | object  |                                         | Override the inline-styles of the media container.
-|`mediaStyle`           | object  |                                         | Override the inline-styles of the media.
-|`subtitle`*            | string  |                                         | Subtitle for the slide.
-|`subtitleStyle`        | object  |                                         | Override the inline-styles of the subtitle.
-|`textStyle`            | object  |                                         | Override the inline-styles of the text container.
-|`title`*               | string  |                                         | Title for the slide.
-|`titleStyle`           | object  |                                         | Override the inline-styles of the title.
+|Name                   |Type       |Default      |Description
+|-----------------------|-----------|-------------|--------------------------------
+|contentStyle           | `object`  |             | Override the inline-styles of the content.
+|media*                 | `node`    |             | Object to display in the upper half.
+|mediaBackgroundStyle   | `object`  |             | Override the inline-styles of the media container.
+|mediaStyle             | `object`  |             | Override the inline-styles of the media.
+|subtitle*              | `string`  |             | Subtitle for the slide.
+|subtitleStyle          | `object`  |             | Override the inline-styles of the subtitle.
+|textStyle              | `object`  |             | Override the inline-styles of the text container.
+|title*                 | `string`  |             | Title for the slide.
+|titleStyle             | `object`  |             | Override the inline-styles of the title.
 
-`* required property`
+\* required property
 
 ## License
 
-The scripts included in this repository are licensed under the MIT.
+The files included in this repository are licensed under the MIT license.
