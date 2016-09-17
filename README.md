@@ -5,6 +5,8 @@ Google has a very cool concept: https://material.google.com/growth-communication
 
 See the change log for more details: [Change log](https://github.com/TeamWertarbyte/material-auto-rotating-carousel/blob/master/CHANGELOG.md)
 
+![Demo](demo.gif)
+
 ## Installation
 ```shell
 npm i --save material-auto-rotating-carousel
