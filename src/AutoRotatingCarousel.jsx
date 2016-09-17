@@ -67,7 +67,7 @@ export class AutoRotatingCarousel extends Component {
 }
 
 AutoRotatingCarousel.propTypes = {
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  onStart: PropTypes.func.isRequired
+  onStart: PropTypes.func
 }
