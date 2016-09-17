@@ -30,6 +30,7 @@ render() {
         <AutoRotatingCarousel
           label="Get started"
           open
+          mobile
         >
           <Slide
             media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png" />}
@@ -65,6 +66,7 @@ render() {
 |`autoplay`         | bool    | true                                    | If `false`, the auto play behavior is disabled.
 |`interval`         | integer | 3000                                    | Delay between auto play transitions (in ms).
 |`label`*           | string  |                                         | Button text.
+|`mobile`           | bool    | false                                   | If `true`, the screen width and height is filled.
 |`open`             | bool    | false                                   | Controls whether the AutoRotatingCarousel is opened or not.
 |`onStart`          | function|                                         | Fired when the user clicks the getting started button.
 
