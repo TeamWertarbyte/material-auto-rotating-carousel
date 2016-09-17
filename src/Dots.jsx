@@ -31,7 +31,12 @@ export class Dots extends Component {
     return (
       <div style={{ ...this.props.style, ...styles.root, width }}>
         {[...Array(count).keys()].map((i) => (
-          <Paper circle zDepth={0} style={i === index ? styles.dot : styles.dotInactive} />
+          <Paper
+            key={i}
+            circle
+            zDepth={0}
+            style={i === index ? styles.dot : styles.dotInactive}
+          />
         ))}
       </div>
     )
