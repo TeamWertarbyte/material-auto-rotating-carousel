@@ -14,14 +14,24 @@ const styles = {
   },
   mediaBackground: {
     backgroundColor: blue700,
-    height: 'calc(100% - 230px)',
+    height: 'calc(100% - 30%)',
     textAlign: 'center'
   },
-  subtitle: {},
+  subtitle: {
+    fontSize: '15px',
+    fontWeight: 400,
+    lineHeight: '32px'
+  },
   text: {
-    textAlign: 'center'
+    textAlign: 'center',
+    maxWidth: '80%',
+    margin: '0 auto'
   },
-  title: {}
+  title: {
+    fontSize: '24px',
+    fontWeight: 400,
+    lineHeight: '32px'
+  }
 }
 
 export class Slide extends Component {
@@ -43,9 +53,9 @@ export class Slide extends Component {
           <div style={{ ...styles.media, ...mediaStyle }}>{media}</div>
         </div>
         <div style={{ ...styles.text, ...textStyle }}>
-          <h1 style={{ ...styles.title, ...titleStyle }}>
+          <p style={{ ...styles.title, ...titleStyle }}>
             {title}
-          </h1>
+          </p>
           <p style={{ ...styles.subtitle, ...subtitleStyle }}>
             {subtitle}
           </p>
