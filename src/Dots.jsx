@@ -11,7 +11,8 @@ const styles = {
     background: 'rgba(255,255,255,1)',
     marginLeft: 3,
     marginRight: 3,
-    float: 'left'
+    float: 'left',
+    transition: 'all 400ms ease-in-out'
   },
   dotInactive: {
     width: 10,
@@ -19,7 +20,8 @@ const styles = {
     background: 'rgba(255,255,255,0.5)',
     marginLeft: 3,
     marginRight: 3,
-    float: 'left'
+    float: 'left',
+    transition: 'all 400ms ease-in-out'
   }
 }
 
