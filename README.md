@@ -1,6 +1,6 @@
 # Material AutoRotatingCarousel
 
-How do you instruct new users to your app?
+How do you introduce new users to your app?
 Google has a very cool concept: https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits
 
 See the change log for more details: [Change log](https://github.com/TeamWertarbyte/material-auto-rotating-carousel/blob/master/CHANGELOG.md)
@@ -60,19 +60,25 @@ render() {
 
 |Name               |Type     |Default                                  |Description
 |-------------------|---------|-----------------------------------------|--------------------------------
+|`autoplay`         | bool    | true                                    | If `false`, the auto play behavior is disabled.
+|`interval`         | integer | 3000                                    | Delay between auto play transitions (in ms).
 |`label`*           | string  |                                         | Button text.
-|`open`*            | bool    |                                         | Controls whether the AutoRotatingCarousel is opened or not.
-|`onStart`*         | function|                                         | Fired when the user clicks the getting started button.
+|`open`             | bool    | false                                   | Controls whether the AutoRotatingCarousel is opened or not.
+|`onStart`          | function|                                         | Fired when the user clicks the getting started button.
 
 ## Slide Properties
 
-|Name               |Type     |Default                                  |Description
-|-------------------|---------|-----------------------------------------|--------------------------------
-|`header`*          | object  |                                         | Object to display in the upper half.
-|`headerStyle`*     | object  |                                         | Overrides the inline-styles of the header container.
-|`backgroundColor`* | string  |                                         | BackgroundColor for the text part.
-|`headline`*        | string  |                                         | Title for the slide.
-|`subhead`*         | string  |                                         | Text for the slide.
+|Name                   |Type     |Default                                  |Description
+|-----------------------|---------|-----------------------------------------|--------------------------------
+|`contentStyle`         | object  |                                         | Override the inline-styles of the content.
+|`media`*               | node    |                                         | Object to display in the upper half.
+|`mediaBackgroundStyle` | object  |                                         | Override the inline-styles of the media container.
+|`mediaStyle`           | object  |                                         | Override the inline-styles of the media.
+|`subtitle`*            | string  |                                         | Subtitle for the slide.
+|`subtitleStyle`        | object  |                                         | Override the inline-styles of the subtitle.
+|`textStyle`            | object  |                                         | Override the inline-styles of the text container.
+|`title`*               | string  |                                         | Title for the slide.
+|`titleStyle`           | object  |                                         | Override the inline-styles of the title.
 
 `* required property`
 
