@@ -10,18 +10,18 @@ import { Dots } from './Dots'
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 const desktopStyles = {
   arrowLeft: {
-    width: 32,
-    height: 32,
+    width: 48,
+    height: 48,
     position: 'fixed',
     top: '50%',
-    marginLeft: -80
+    marginLeft: -96
   },
   arrowRight: {
-    width: 32,
-    height: 32,
+    width: 48,
+    height: 48,
     position: 'fixed',
     top: '50%',
-    right: -80
+    right: -96
   },
   arrowIconButton: {
     width: 'inherit',
@@ -106,14 +106,16 @@ export class AutoRotatingCarousel extends Component {
   }
 
   decreaseIndex() {
-    let slideIndex = this.state.slideIndex - 1
+    let slideIndex = this.state.slideIndex
+    slideIndex === 0 ? slideIndex = this.props.children.length - 1 : slideIndex--
     this.setState({
       slideIndex
     })
   }
 
   increaseIndex() {
-    let slideIndex = this.state.slideIndex + 1
+    let slideIndex = this.state.slideIndex
+    slideIndex < this.props.children.length - 1 ? slideIndex = 0 : slideIndex++
     this.setState({
       slideIndex
     })
@@ -145,7 +147,8 @@ export class AutoRotatingCarousel extends Component {
                 style={style.dots}
               />
             </div>
-            {!this.props.mobile && this.state.slideIndex > 0 ?
+            {!this.props.mobile ?
+              <div>
                 <Paper
                   style={style.arrowLeft}
                   circle
@@ -158,28 +161,24 @@ export class AutoRotatingCarousel extends Component {
                   >
                     <ArrowBackIcon />
                   </IconButton>
-
-                </Paper> : <div />
-            }
-
-            {!this.props.mobile && this.state.slideIndex < this.props.children.length - 1 ?
-              <Paper
-                style={style.arrowRight}
-                circle
-              >
-                <IconButton
-                  style={style.arrowIconButton}
-                  iconStyle={style.arrowIcon}
-                  onTouchTap={() => this.increaseIndex()}
-                  touch
+                </Paper>
+                <Paper
+                  style={style.arrowRight}
+                  circle
                 >
-                  <ArrowForwardIcon />
-                </IconButton>
-
-              </Paper> : <div />
+                  <IconButton
+                    style={style.arrowIconButton}
+                    iconStyle={style.arrowIcon}
+                    onTouchTap={() => this.increaseIndex()}
+                    touch
+                  >
+                    <ArrowForwardIcon />
+                  </IconButton>
+                </Paper>
+              </div>: null
             }
-          </div>
-          : <div /> }
+          </div> : null
+        }
       </div>
     )
   }
