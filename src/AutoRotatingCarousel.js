@@ -107,17 +107,15 @@ export class AutoRotatingCarousel extends Component {
 
   decreaseIndex() {
     let slideIndex = this.state.slideIndex
-    slideIndex === 0 ? slideIndex = this.props.children.length - 1 : slideIndex--
     this.setState({
-      slideIndex
+      slideIndex: slideIndex === 0 ? this.props.children.length - 1 : slideIndex - 1
     })
   }
 
   increaseIndex() {
     let slideIndex = this.state.slideIndex
-    slideIndex < this.props.children.length - 1 ? slideIndex = 0 : slideIndex++
     this.setState({
-      slideIndex
+      slideIndex: slideIndex === this.props.children.length - 1 ? 0 : slideIndex + 1
     })
   }
 
