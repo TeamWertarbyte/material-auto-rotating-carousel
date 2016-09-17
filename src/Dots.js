@@ -2,47 +2,29 @@ import React, { Component, PropTypes } from 'react'
 import { Paper } from 'material-ui'
 
 const styles = {
-  root: {
-    display: 'block'
-  },
   dot: {
     width: 10,
     height: 10,
-    background: 'rgba(255,255,255,1)',
-    marginLeft: 3,
-    marginRight: 3,
-    float: 'left',
-    transition: 'all 400ms cubic-bezier(0.4, 0.0, 0.2, 1)'
-  },
-  dotInactive: {
-    width: 10,
-    height: 10,
-    background: 'rgba(255,255,255,0.5)',
-    marginLeft: 3,
-    marginRight: 3,
+    background: '#fff',
+    margin: '0 3px',
     float: 'left',
     transition: 'all 400ms cubic-bezier(0.4, 0.0, 0.2, 1)'
   }
 }
 
-export class Dots extends Component {
-  render() {
-    const { count, index } = this.props
-    const width = (count * 10) + (count * 6)
-
-    return (
-      <div style={{ ...this.props.style, ...styles.root, width }}>
-        {[...Array(count).keys()].map((i) => (
-          <Paper
-            key={i}
-            circle
-            zDepth={0}
-            style={i === index ? styles.dot : styles.dotInactive}
-          />
-        ))}
-      </div>
-    )
-  }
+export function Dots ({ count, index, style = {} }) {
+  return (
+    <div style={{ ...style, width: count * 16 }}>
+      {[...Array(count).keys()].map((i) => (
+        <Paper
+          key={i}
+          circle
+          zDepth={0}
+          style={{ ...styles.dot, opacity: i === index ? 1 : 0.5 }}
+        />
+      ))}
+    </div>
+  )
 }
 
 Dots.propTypes = {
