@@ -1,37 +1,53 @@
 import React, { Component, PropTypes } from 'react'
+import { blue500, blue700 } from 'material-ui/styles/colors'
 
 const styles = {
   root: {
-    color: 'white'
+    color: 'white',
+    backgroundColor: blue500,
+    height: '100%'
   },
-  header: {
-    height: 'calc(100% - 230px)',
-    textAlign: 'center'
-  },
-  headerItem: {
+  media: {
     position: 'relative',
     top: '50%',
     transform: 'translateY(-50%)'
   },
+  mediaBackground: {
+    backgroundColor: blue700,
+    height: 'calc(100% - 230px)',
+    textAlign: 'center'
+  },
+  subtitle: {},
   text: {
     textAlign: 'center'
-  }
+  },
+  title: {}
 }
 
 export class Slide extends Component {
   render() {
-    const { backgroundColor, header, headerStyle, headline, subhead } = this.props
+    const {
+      contentStyle,
+      media,
+      mediaBackgroundStyle,
+      mediaStyle,
+      subtitle,
+      subtitleStyle,
+      textStyle,
+      title,
+      titleStyle
+    } = this.props
     return (
-      <div style={{ ...styles.root, backgroundColor, height: '100%' }}>
-        <div style={{ ...styles.header, ...headerStyle }}>
-          <div style={styles.headerItem}>{header}</div>
+      <div style={{ ...styles.root, ...contentStyle }}>
+        <div style={{ ...styles.mediaBackground, ...mediaBackgroundStyle }}>
+          <div style={{ ...styles.media, ...mediaStyle }}>{media}</div>
         </div>
-        <div style={styles.text}>
-          <h1>
-            {headline}
+        <div style={{ ...styles.text, ...textStyle }}>
+          <h1 style={{ ...styles.title, ...titleStyle }}>
+            {title}
           </h1>
-          <p>
-            {subhead}
+          <p style={{ ...styles.subtitle, ...subtitleStyle }}>
+            {subtitle}
           </p>
         </div>
       </div>
@@ -40,9 +56,13 @@ export class Slide extends Component {
 }
 
 Slide.propTypes = {
-  header: PropTypes.object.isRequired,
-  headerStyle: PropTypes.object.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  headline: PropTypes.string.isRequired,
-  subhead: PropTypes.string.isRequired
+  contentStyle: PropTypes.object,
+  media: PropTypes.node.isRequired,
+  mediaBackgroundStyle: PropTypes.object,
+  mediaStyle: PropTypes.object,
+  subtitle: PropTypes.string.isRequired,
+  subtitleStyle: PropTypes.object,
+  textStyle: PropTypes.object,
+  title: PropTypes.string.isRequired,
+  titleStyle: PropTypes.object
 }
