@@ -19,10 +19,6 @@ const styles = {
 }
 
 export class Slide extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { backgroundColor, header, headerStyle, headline, subhead } = this.props
     return (
