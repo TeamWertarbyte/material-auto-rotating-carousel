@@ -4,7 +4,8 @@ So you wrote a great app and deployed it and everything. But how do you introduc
 
 This project implements such a carousel for [material-ui](https://material-ui.com). See [the storybook](https://teamwertarbyte.github.io/material-auto-rotating-carousel) for an interactive demo.
 
-![Demo](demo.gif)
+![Desktop](desktop.gif)
+![Mobile-Portrait](mobile-portrait.gif)
 
 ## Installation
 ```shell
@@ -29,7 +30,6 @@ render() {
       <AutoRotatingCarousel
         label="Get started"
         open
-        mobile
       >
         <Slide
           media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png" />}
