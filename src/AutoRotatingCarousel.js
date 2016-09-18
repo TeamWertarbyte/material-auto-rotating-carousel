@@ -13,14 +13,14 @@ const desktopStyles = {
     width: 48,
     height: 48,
     position: 'fixed',
-    top: '50%',
-    marginLeft: -96
+    top: 'calc(50% - 36px)',
+    left: -96
   },
   arrowRight: {
     width: 48,
     height: 48,
     position: 'fixed',
-    top: '50%',
+    top: 'calc(50% - 36px)',
     right: -96
   },
   arrowIconButton: {
@@ -49,16 +49,16 @@ const desktopStyles = {
     transform: 'translateY(-50%)'
   },
   dots: {
-    paddingTop: 48,
+    paddingTop: 60,
     margin: '0 auto'
   },
   footer: {
-    marginTop: -60,
+    marginTop: -72,
     width: '100%',
     position: 'relative',
     textAlign: 'center'
   },
-  slider: {
+  slide: {
     width: '100%',
     height: '80vh'
   }
@@ -84,7 +84,7 @@ const mobileStyles = {
     position: 'relative',
     textAlign: 'center'
   },
-  slider: {
+  slide: {
     width: '100%',
     height: '100vh'
   }
@@ -126,14 +126,13 @@ export class AutoRotatingCarousel extends Component {
           <div style={style.content}>
             <Paper
               zIndex={this.props.mobile ? 0 : 1}
-              rounded={false}
-            >
+              style={{ overflow: 'hidden', borderRadius: 14, position: 'relative', transform:'scale(1.0)', background: 'transparent' }}>
               <AutoPlaySwipeableViews
                 autoplay={this.props.autoplay}
                 interval={this.props.interval}
                 index={this.state.slideIndex}
                 onChangeIndex={(value) => this.handleChange(value)}
-                slideStyle={style.slider}
+                slideStyle={style.slide}
               >
                 {this.props.children}
               </AutoPlaySwipeableViews>
