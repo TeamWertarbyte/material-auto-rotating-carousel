@@ -42,6 +42,7 @@ const desktopStyles = {
   },
   content: {
     width: '60%',
+    maxWidth: 700,
     margin: '0 auto',
     position: 'relative',
     top: '50%',
