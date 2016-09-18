@@ -67,7 +67,8 @@ const desktopStyles = {
   },
   slide: {
     width: '100%',
-    height: '80vh'
+    height: '80vh',
+    maxHeight: 720
   }
 }
 
