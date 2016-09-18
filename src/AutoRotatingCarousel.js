@@ -124,15 +124,20 @@ export class AutoRotatingCarousel extends Component {
       <div style={{ ...style.root, width: this.props.open ? '100%' : 0 }}>
         {this.props.open ?
           <div style={style.content}>
-            <AutoPlaySwipeableViews
-              autoplay={this.props.autoplay}
-              interval={this.props.interval}
-              index={this.state.slideIndex}
-              onChangeIndex={(value) => this.handleChange(value)}
-              slideStyle={style.slider}
+            <Paper
+              zIndex={this.props.mobile ? 0 : 1}
+              rounded={false}
             >
-              {this.props.children}
-            </AutoPlaySwipeableViews>
+              <AutoPlaySwipeableViews
+                autoplay={this.props.autoplay}
+                interval={this.props.interval}
+                index={this.state.slideIndex}
+                onChangeIndex={(value) => this.handleChange(value)}
+                slideStyle={style.slider}
+              >
+                {this.props.children}
+              </AutoPlaySwipeableViews>
+            </Paper>
             <div style={style.footer}>
               <RaisedButton
                 label={this.props.label}
