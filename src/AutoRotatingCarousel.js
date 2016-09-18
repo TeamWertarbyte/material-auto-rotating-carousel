@@ -23,6 +23,13 @@ const desktopStyles = {
     top: 'calc(50% - 36px)',
     right: -96
   },
+  carouselWrapper: {
+    overflow: 'hidden',
+    borderRadius: 14,
+    position: 'relative',
+    transform:'scale(1.0)',
+    background: 'transparent'
+  },
   arrowIconButton: {
     width: 48,
     height: 48,
@@ -126,7 +133,7 @@ export class AutoRotatingCarousel extends Component {
           <div style={style.content}>
             <Paper
               zIndex={this.props.mobile ? 0 : 1}
-              style={{ overflow: 'hidden', borderRadius: 14, position: 'relative', transform:'scale(1.0)', background: 'transparent' }}>
+              style={style.carouselWrapper}>
               <AutoPlaySwipeableViews
                 autoplay={this.props.autoplay}
                 interval={this.props.interval}
