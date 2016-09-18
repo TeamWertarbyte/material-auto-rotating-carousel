@@ -24,13 +24,11 @@ const desktopStyles = {
     right: -96
   },
   arrowIconButton: {
-    width: 'inherit',
-    height: 'inherit',
-    padding: 8
+    width: 48,
+    height: 48,
+    padding: 4
   },
   arrowIcon: {
-    width: 16,
-    height: 16,
     color: grey700
   },
   root: {
