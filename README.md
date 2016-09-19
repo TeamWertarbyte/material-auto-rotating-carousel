@@ -5,6 +5,7 @@ So you wrote a great app and deployed it and everything. But how do you introduc
 This project implements such a carousel for [material-ui](https://material-ui.com). See [the storybook](https://teamwertarbyte.github.io/material-auto-rotating-carousel) for an interactive demo.
 
 ![Desktop](desktop.gif)
+![Mobile-Landscape](mobile-landscape.gif)
 ![Mobile-Portrait](mobile-portrait.gif)
 
 ## Installation
@@ -65,6 +66,7 @@ render() {
 |autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
 |interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
 |label*          | `string`   |            | Button text.
+|landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
 |mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
 |open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
 |onStart         | `function` |            | Fired when the user clicks the getting started button.
