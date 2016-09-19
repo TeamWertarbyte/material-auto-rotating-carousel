@@ -87,7 +87,7 @@ const mobileStyles = {
     margin: '0 auto'
   },
   footer: {
-    marginTop: -100,
+    marginTop: -92,
     width: '100%',
     position: 'relative',
     textAlign: 'center'
@@ -142,7 +142,9 @@ export class AutoRotatingCarousel extends Component {
                 onChangeIndex={(value) => this.handleChange(value)}
                 slideStyle={style.slide}
               >
-                {this.props.children}
+                {this.props.children.map((c) => React.cloneElement(c, {
+                  mobile: this.props.mobile
+                }))}
               </AutoPlaySwipeableViews>
             </Paper>
             <div style={style.footer}>
@@ -184,7 +186,7 @@ export class AutoRotatingCarousel extends Component {
                     <ArrowForwardIcon />
                   </IconButton>
                 </Paper>
-              </div>: null
+              </div> : null
             }
           </div> : null
         }
