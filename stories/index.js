@@ -10,6 +10,7 @@ storiesOf('AutoRotatingCarousel', module)
   .add('desktop', () => themed(
     <AutoRotatingCarousel
       label="Get started"
+      onStart={action('onStart')}
       open
     >
       <Slide
@@ -38,6 +39,7 @@ storiesOf('AutoRotatingCarousel', module)
   .add('mobile', () => themed(
     <AutoRotatingCarousel
       label="Get started"
+      onStart={action('onStart')}
       open
       mobile
     >
@@ -67,6 +69,7 @@ storiesOf('AutoRotatingCarousel', module)
   .add('mobile landscape', () => themed(
     <AutoRotatingCarousel
       label="Get started"
+      onStart={action('onStart')}
       open
       mobile
       landscape
