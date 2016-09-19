@@ -86,11 +86,21 @@ const mobileStyles = {
     paddingTop: 24,
     margin: '0 auto'
   },
+  dotsLandscape: {
+    paddingTop: 20,
+    margin: '0 auto'
+  },
   footer: {
     marginTop: -92,
     width: '100%',
     position: 'relative',
     textAlign: 'center'
+  },
+  footerLandscape: {
+    marginTop: -3,
+    transform: 'translateY(-50vh)',
+    textAlign: 'center',
+    display: 'inline-block'
   },
   slide: {
     width: '100%',
@@ -128,6 +138,8 @@ export class AutoRotatingCarousel extends Component {
 
   render() {
     const style = this.props.mobile ? mobileStyles : desktopStyles
+    const landscape = this.props.mobile && this.props.landscape
+
     return (
       <div style={{ ...style.root, width: this.props.open ? '100%' : 0 }}>
         {this.props.open ?
@@ -143,20 +155,23 @@ export class AutoRotatingCarousel extends Component {
                 slideStyle={style.slide}
               >
                 {this.props.children.map((c) => React.cloneElement(c, {
-                  mobile: this.props.mobile
+                  mobile: this.props.mobile,
+                  landscape: this.props.landscape
                 }))}
               </AutoPlaySwipeableViews>
             </Paper>
-            <div style={style.footer}>
-              <RaisedButton
-                label={this.props.label}
-                onTouchTap={this.props.onStart}
-              />
-              <Dots
-                count={this.props.children.length}
-                index={this.state.slideIndex}
-                style={style.dots}
-              />
+            <div style={landscape ? { minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right' } : null}>
+              <div style={landscape ? style.footerLandscape : style.footer}>
+                <RaisedButton
+                  label={this.props.label}
+                  onTouchTap={this.props.onStart}
+                />
+                <Dots
+                  count={this.props.children.length}
+                  index={this.state.slideIndex}
+                  style={landscape ? style.dotsLandscape : style.dots}
+                />
+              </div>
             </div>
             {!this.props.mobile ?
               <div>
@@ -200,6 +215,7 @@ AutoRotatingCarousel.propTypes = {
   interval: PropTypes.number,
   label: PropTypes.string.isRequired,
   mobile: PropTypes.bool,
+  landscape: PropTypes.bool,
   onStart: PropTypes.func,
   open: PropTypes.bool
 }

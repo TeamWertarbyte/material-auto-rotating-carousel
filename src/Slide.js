@@ -37,6 +37,47 @@ const styles = {
       marginBottom: 8
     }
   },
+  mobileLandscape: {
+    root: {
+      color: 'white',
+      backgroundColor: blue500,
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'row'
+    },
+    media: {
+      position: 'relative',
+      top: '50%',
+      transform: 'translateY(-50%)'
+    },
+    mediaBackground: {
+      backgroundColor: blue700,
+      height: '100%',
+      textAlign: 'center',
+      flex: '1 1',
+      alignSelf: 'stretch'
+    },
+    subtitle: {
+      fontSize: '15px',
+      fontWeight: 400,
+      lineHeight: '18px',
+      margin: 0
+    },
+    text: {
+      minWidth: 300,
+      maxWidth: 'calc(50% - 48px)',
+      padding: '24px 24px 128px',
+      flex: '0 1',
+      alignSelf: 'center'
+    },
+    title: {
+      fontSize: '24px',
+      fontWeight: 700,
+      lineHeight: '32px',
+      marginBottom: 8
+    }
+  },
   desktop: {
     root: {
       color: 'white',
@@ -85,10 +126,11 @@ export function Slide (props) {
     textStyle,
     title,
     titleStyle,
-    mobile
+    mobile,
+    landscape
   } = props
 
-  const style = mobile ? styles.mobile : styles.desktop
+  const style = mobile ? (landscape ? styles.mobileLandscape : styles.mobile) : styles.desktop
 
   return (
     <div style={{ ...style.root, ...contentStyle }}>
@@ -117,5 +159,6 @@ Slide.propTypes = {
   textStyle: PropTypes.object,
   title: PropTypes.string.isRequired,
   titleStyle: PropTypes.object,
-  mobile: PropTypes.bool
+  mobile: PropTypes.bool,
+  landscape: PropTypes.bool
 }
