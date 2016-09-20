@@ -4,9 +4,7 @@ So you wrote a great app and deployed it and everything. But how do you introduc
 
 This project implements such a carousel for [material-ui](https://material-ui.com). See [the storybook](https://teamwertarbyte.github.io/material-auto-rotating-carousel) for an interactive demo.
 
-![Desktop](desktop.gif)
-![Mobile-Landscape](mobile-landscape.gif)
-![Mobile-Portrait](mobile-portrait.gif)
+![Demo](demo.gif)
 
 ## Installation
 ```shell
