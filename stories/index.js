@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf, action, linkTo } from '@kadira/storybook'
 import { green400, green600, blue400, blue600, red400, red600 } from 'material-ui/styles/colors'
 import { AutoRotatingCarousel, Slide } from '../src'
-import { Dots } from '../src/Dots'
+import Dots from '../src/Dots'
 import { themed } from './storyUtil'
 import AutoRotatingDots from './AutoRotatingDots'
 

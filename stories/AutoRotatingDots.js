@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dots } from '../src/Dots'
+import Dots from '../src/Dots'
 
 export default class extends React.Component {
   constructor (props) {
