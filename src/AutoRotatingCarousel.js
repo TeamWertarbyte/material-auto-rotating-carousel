@@ -1,13 +1,12 @@
 import React, {Component, PropTypes} from 'react'
 import { IconButton, Paper, RaisedButton } from 'material-ui'
 import { grey700 } from 'material-ui/styles/colors'
-import autoPlay from 'react-swipeable-views/lib/autoPlay'
-import SwipeableViews from 'react-swipeable-views'
 import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back'
 import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward'
-import { Dots } from './Dots'
+import Dots from './Dots'
+import Carousel from './SwipableCarouselView'
+import { modulo } from './util'
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 const desktopStyles = {
   arrowLeft: {
     width: 48,
@@ -123,16 +122,14 @@ export class AutoRotatingCarousel extends Component {
   }
 
   decreaseIndex() {
-    let slideIndex = this.state.slideIndex
     this.setState({
-      slideIndex: slideIndex === 0 ? this.props.children.length - 1 : slideIndex - 1
+      slideIndex: this.state.slideIndex - 1
     })
   }
 
   increaseIndex() {
-    let slideIndex = this.state.slideIndex
     this.setState({
-      slideIndex: slideIndex === this.props.children.length - 1 ? 0 : slideIndex + 1
+      slideIndex: this.state.slideIndex + 1
     })
   }
 
@@ -147,7 +144,7 @@ export class AutoRotatingCarousel extends Component {
             <Paper
               zIndex={this.props.mobile ? 0 : 1}
               style={style.carouselWrapper}>
-              <AutoPlaySwipeableViews
+              <Carousel
                 autoplay={this.props.autoplay}
                 interval={this.props.interval}
                 index={this.state.slideIndex}
@@ -158,7 +155,7 @@ export class AutoRotatingCarousel extends Component {
                   mobile: this.props.mobile,
                   landscape: this.props.landscape
                 }))}
-              </AutoPlaySwipeableViews>
+              </Carousel>
             </Paper>
             <div style={landscape ? { minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right' } : null}>
               <div style={landscape ? style.footerLandscape : style.footer}>
@@ -168,7 +165,7 @@ export class AutoRotatingCarousel extends Component {
                 />
                 <Dots
                   count={this.props.children.length}
-                  index={this.state.slideIndex}
+                  index={modulo(this.state.slideIndex, this.props.children.length)}
                   style={landscape ? style.dotsLandscape : style.dots}
                 />
               </div>

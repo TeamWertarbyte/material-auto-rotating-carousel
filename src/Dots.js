@@ -12,7 +12,7 @@ const styles = {
   }
 }
 
-export function Dots ({ count, index, style = {} }) {
+export default function Dots ({ count, index, style = {} }) {
   return (
     <div style={{ ...style, width: count * 16 }}>
       {[...Array(count).keys()].map((i) => (
