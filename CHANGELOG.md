@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 
+## [0.4.1] - 2016-09-21
+### Changed
+- Improve carousel animation (no jumps).
+
 ## [0.4.0] - 2016-09-19
 ### Added
 - Landscape prop for mobile mode. Will adjust then content for wide screens.
