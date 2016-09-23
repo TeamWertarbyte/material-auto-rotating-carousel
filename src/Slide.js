@@ -87,7 +87,8 @@ const styles = {
     media: {
       position: 'relative',
       top: '50%',
-      transform: 'translateY(-50%)'
+      transform: 'translateY(-50%)',
+      height: '100%'
     },
     mediaBackground: {
       backgroundColor: blue700,
@@ -110,7 +111,10 @@ const styles = {
       fontSize: '24px',
       fontWeight: 700,
       lineHeight: '32px',
-      marginBottom: 12
+      marginBottom: 12,
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden'
     }
   }
 }
@@ -135,7 +139,9 @@ export function Slide (props) {
   return (
     <div style={{ ...style.root, ...contentStyle }}>
       <div style={{ ...style.mediaBackground, ...mediaBackgroundStyle }}>
-        <div style={{ ...style.media, ...mediaStyle }}>{media}</div>
+        <div style={{ ...style.media, ...mediaStyle }}>{React.cloneElement(media, {
+          style: { ...media.style, maxHeight: '100%', maxWidth: '100%' }
+        })}</div>
       </div>
       <div style={{ ...style.text, ...textStyle }}>
         <div style={{ ...style.title, ...titleStyle }}>

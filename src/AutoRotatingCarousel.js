@@ -11,23 +11,23 @@ const desktopStyles = {
   arrowLeft: {
     width: 48,
     height: 48,
-    position: 'fixed',
-    top: 'calc(50% - 36px)',
+    position: 'absolute',
+    top: 'calc((100% - 96px) / 2 + 24px)',
     left: -96
   },
   arrowRight: {
     width: 48,
     height: 48,
-    position: 'fixed',
-    top: 'calc(50% - 36px)',
+    position: 'absolute',
+    top: 'calc((100% - 96px) / 2 + 24px)',
     right: -96
   },
   carouselWrapper: {
     overflow: 'hidden',
     borderRadius: 14,
-    position: 'relative',
     transform:'scale(1.0)',
-    background: 'transparent'
+    background: 'transparent',
+    height: '100%'
   },
   arrowIconButton: {
     width: 48,
@@ -39,17 +39,19 @@ const desktopStyles = {
   },
   root: {
     height: '100%',
-    width: 0,
+    width: '100%',
     position: 'fixed',
     zIndex: 1400,
     left: 0,
     top: 0,
-    backgroundColor: 'rgba(0,0,0,0.5)'
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   content: {
     width: '60%',
     maxWidth: 700,
-    margin: '0 auto',
+    height: 'calc(100% - 96px)',
+    maxHeight: 600,
+    margin: '-16px auto 0',
     position: 'relative',
     top: '50%',
     transform: 'translateY(-50%)'
@@ -66,15 +68,20 @@ const desktopStyles = {
   },
   slide: {
     width: '100%',
-    height: '80vh',
-    maxHeight: 720
+    height: '100%',
+  },
+  carousel: {
+    height: '100%'
+  },
+  carouselContainer: {
+    height: '100%'
   }
 }
 
 const mobileStyles = {
   root: {
     height: '100%',
-    width: 0,
+    width: '100%',
     position: 'fixed',
     zIndex: 1400,
     left: 0,
@@ -138,7 +145,7 @@ export class AutoRotatingCarousel extends Component {
     const landscape = this.props.mobile && this.props.landscape
 
     return (
-      <div style={{ ...style.root, width: this.props.open ? '100%' : 0 }}>
+      <div style={{ ...style.root, display: this.props.open ? null : 'none', ...this.props.style }}>
         {this.props.open ?
           <div style={style.content}>
             <Paper
@@ -149,6 +156,8 @@ export class AutoRotatingCarousel extends Component {
                 interval={this.props.interval}
                 index={this.state.slideIndex}
                 onChangeIndex={(value) => this.handleChange(value)}
+                style={style.carousel}
+                containerStyle={style.carouselContainer}
                 slideStyle={style.slide}
               >
                 {this.props.children.map((c, i) => React.cloneElement(c, {
