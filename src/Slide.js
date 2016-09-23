@@ -85,10 +85,10 @@ const styles = {
       height: '100%'
     },
     media: {
-      position: 'relative',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      height: '100%'
+      height: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     mediaBackground: {
       backgroundColor: blue700,
@@ -140,7 +140,7 @@ export function Slide (props) {
     <div style={{ ...style.root, ...contentStyle }}>
       <div style={{ ...style.mediaBackground, ...mediaBackgroundStyle }}>
         <div style={{ ...style.media, ...mediaStyle }}>{React.cloneElement(media, {
-          style: { ...media.style, maxHeight: '100%', maxWidth: '100%' }
+          style: { ...media.style, maxHeight: '100%' }
         })}</div>
       </div>
       <div style={{ ...style.text, ...textStyle }}>
