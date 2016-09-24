@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 
+## [0.5.0] - 2016-09-24
+### Added
+- Keyboard navigation support
+
+### Changed
+- Improve desktop carousel appearance in small window sizes
+
 ## [0.4.1] - 2016-09-21
 ### Changed
 - Improve carousel animation (no jumps).
