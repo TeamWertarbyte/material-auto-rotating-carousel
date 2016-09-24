@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 
+## [0.5.1] - 2016-09-24
+### Changed
+- Update react-swipable-views
+- Fixed HOC order
+
 ## [0.5.0] - 2016-09-24
 ### Added
 - Keyboard navigation support
