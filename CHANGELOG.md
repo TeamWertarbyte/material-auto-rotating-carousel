@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 
+## [1.0.0] - 2016-10-14
+### Changed
+- Update material ui to 0.16.0
+
 ## [0.5.1] - 2016-09-24
 ### Changed
 - Update react-swipable-views
