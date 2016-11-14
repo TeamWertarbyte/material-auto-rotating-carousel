@@ -122,22 +122,28 @@ export class AutoRotatingCarousel extends Component {
     }
   }
 
-  handleChange(value) {
+  handleChange(slideIndex) {
     this.setState({
-      slideIndex: value
-    })
+      slideIndex
+    }, this.onChange(slideIndex))
   }
 
   decreaseIndex() {
+    const slideIndex = this.state.slideIndex - 1
     this.setState({
-      slideIndex: this.state.slideIndex - 1
-    })
+      slideIndex
+    }, this.onChange(slideIndex))
   }
 
   increaseIndex() {
+    const slideIndex = this.state.slideIndex + 1
     this.setState({
-      slideIndex: this.state.slideIndex + 1
-    })
+      slideIndex
+    }, this.onChange(slideIndex))
+  }
+
+  onChange(slideIndex) {
+    this.props.onChange ? this.props.onChange(modulo(slideIndex, this.props.children.length)) : null
   }
 
   render() {
@@ -155,7 +161,7 @@ export class AutoRotatingCarousel extends Component {
                 autoplay={this.props.autoplay}
                 interval={this.props.interval}
                 index={this.state.slideIndex}
-                onChangeIndex={(value) => this.handleChange(value)}
+                onChangeIndex={(slideIndex) => this.handleChange(slideIndex)}
                 style={style.carousel}
                 containerStyle={style.carouselContainer}
                 slideStyle={style.slide}
@@ -223,6 +229,7 @@ AutoRotatingCarousel.propTypes = {
   label: PropTypes.string.isRequired,
   mobile: PropTypes.bool,
   landscape: PropTypes.bool,
+  onChange: PropTypes.func,
   onStart: PropTypes.func,
   open: PropTypes.bool
 }

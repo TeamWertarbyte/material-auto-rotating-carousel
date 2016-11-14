@@ -11,6 +11,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
+      onChange={(index) => console.log(index)}
       open
     >
       <Slide
@@ -40,6 +41,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
+      onChange={(index) => console.log(index)}
       open
       style={{ width: 500, height: 350 }}
     >
@@ -70,6 +72,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
+      onChange={(index) => console.log(index)}
       open
       mobile
     >
@@ -100,6 +103,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
+      onChange={(index) => console.log(index)}
       open
       mobile
       landscape

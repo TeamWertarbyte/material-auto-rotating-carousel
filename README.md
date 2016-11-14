@@ -67,6 +67,7 @@ render() {
 |landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
 |mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
 |open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
+|onChange        | `function` |            | Fired when the index changed. Returns current index.
 |onStart         | `function` |            | Fired when the user clicks the getting started button.
 
 ### Slide Properties
