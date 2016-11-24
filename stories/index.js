@@ -12,6 +12,7 @@ storiesOf('AutoRotatingCarousel', module)
       label="Get started"
       onStart={action('onStart')}
       onChange={(index) => console.log(index)}
+      onRequestClose={action('onClose')}
       open
     >
       <Slide
