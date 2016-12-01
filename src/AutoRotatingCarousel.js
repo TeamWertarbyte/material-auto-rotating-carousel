@@ -45,6 +45,7 @@ const desktopStyles = {
     left: 0,
     top: 0,
     backgroundColor: 'rgba(0,0,0,0.5)',
+    transition: 'opacity 400ms cubic-bezier(0.23, 1, 0.32, 1)'
   },
   content: {
     width: '60%',
@@ -121,6 +122,9 @@ export class AutoRotatingCarousel extends Component {
       slideIndex: 0
     }
   }
+  static defaultProps = {
+    onRequestClose: () => {}
+  };
 
   handleChange(slideIndex) {
     this.setState({
@@ -151,42 +155,49 @@ export class AutoRotatingCarousel extends Component {
     const landscape = this.props.mobile && this.props.landscape
 
     return (
-      <div style={{ ...style.root, display: this.props.open ? null : 'none', ...this.props.style }}>
-        {this.props.open ?
-          <div style={style.content}>
-            <Paper
-              zDepth={this.props.mobile ? 0 : 1}
-              style={style.carouselWrapper}>
-              <Carousel
-                autoplay={this.props.autoplay}
-                interval={this.props.interval}
-                index={this.state.slideIndex}
-                onChangeIndex={(slideIndex) => this.handleChange(slideIndex)}
-                style={style.carousel}
-                containerStyle={style.carouselContainer}
-                slideStyle={style.slide}
-              >
-                {this.props.children.map((c, i) => React.cloneElement(c, {
-                  mobile: this.props.mobile,
-                  landscape: this.props.landscape,
-                  key: i
-                }))}
-              </Carousel>
-            </Paper>
-            <div style={landscape ? { minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right' } : null}>
-              <div style={landscape ? style.footerLandscape : style.footer}>
-                <RaisedButton
-                  label={this.props.label}
-                  onTouchTap={this.props.onStart}
-                />
-                <Dots
-                  count={this.props.children.length}
-                  index={modulo(this.state.slideIndex, this.props.children.length)}
-                  style={landscape ? style.dotsLandscape : style.dots}
-                />
-              </div>
+      <div
+        style={{
+          ...style.root,
+          pointerEvents: this.props.open ? null : 'none',
+          opacity: this.props.open ? '1' : '0',
+          ...this.props.style
+        }}
+        onTouchTap={this.props.onRequestClose}
+      >
+        <div style={style.content} onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()} >
+          <Paper
+            zDepth={this.props.mobile ? 0 : 1}
+            style={style.carouselWrapper}>
+            <Carousel
+              autoplay={this.props.open && this.props.autoplay}
+              interval={this.props.interval}
+              index={this.state.slideIndex}
+              onChangeIndex={(slideIndex) => this.handleChange(slideIndex)}
+              style={style.carousel}
+              containerStyle={style.carouselContainer}
+              slideStyle={style.slide}
+            >
+              {this.props.children.map((c, i) => React.cloneElement(c, {
+                mobile: this.props.mobile,
+                landscape: this.props.landscape,
+                key: i
+              }))}
+            </Carousel>
+          </Paper>
+          <div style={landscape ? { minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right' } : null}>
+            <div style={landscape ? style.footerLandscape : style.footer}>
+              <RaisedButton
+                label={this.props.label}
+                onTouchTap={this.props.onStart}
+              />
+              <Dots
+                count={this.props.children.length}
+                index={modulo(this.state.slideIndex, this.props.children.length)}
+                style={landscape ? style.dotsLandscape : style.dots}
+              />
             </div>
-            {!this.props.mobile ?
+          </div>
+          {!this.props.mobile ?
               <div>
                 <Paper
                   style={style.arrowLeft}
@@ -215,9 +226,8 @@ export class AutoRotatingCarousel extends Component {
                   </IconButton>
                 </Paper>
               </div> : null
-            }
-          </div> : null
-        }
+          }
+        </div>
       </div>
     )
   }

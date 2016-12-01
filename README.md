@@ -68,6 +68,7 @@ render() {
 |mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
 |open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
 |onChange        | `function` |            | Fired when the index changed. Returns current index.
+|onRequestClose  | `function` | `noop`     | Fired when the gray background of the popup is pressed when it is open.
 |onStart         | `function` |            | Fired when the user clicks the getting started button.
 
 ### Slide Properties
