@@ -45,7 +45,7 @@ const desktopStyles = {
     left: 0,
     top: 0,
     backgroundColor: 'rgba(0,0,0,0.5)',
-    transition: 'opacity 400ms cubic-bezier(0.23, 1, 0.32, 1)'
+    transition: 'opacity 400ms cubic-bezier(0.4, 0, 0.2, 1)'
   },
   content: {
     width: '60%',
