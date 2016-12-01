@@ -5,6 +5,7 @@ import { AutoRotatingCarousel, Slide } from '../src'
 import Dots from '../src/Dots'
 import { themed } from './storyUtil'
 import AutoRotatingDots from './AutoRotatingDots'
+import AnimationDemo from './AnimationDemo'
 
 storiesOf('AutoRotatingCarousel', module)
   .add('desktop', () => themed(
@@ -69,6 +70,9 @@ storiesOf('AutoRotatingCarousel', module)
         subtitle="The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe."
       />
     </AutoRotatingCarousel>
+  ))
+  .add('desktop (animation demo)', () => themed(
+    <AnimationDemo />
   ))
   .add('mobile', () => themed(
     <AutoRotatingCarousel
