@@ -38,7 +38,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-motion": "^0.4.4",
-    "react-swipeable-views": "^0.7.7",
+    "react-swipeable-views": "^0.10.7",
     "react-tap-event-plugin": "^2.0.0"
   },
   "peerDependencies": {
@@ -46,6 +46,6 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-motion": "^0.4.4",
-    "react-swipeable-views": "^0.7.7"
+    "react-swipeable-views": "^0.10.7"
   }
 }
