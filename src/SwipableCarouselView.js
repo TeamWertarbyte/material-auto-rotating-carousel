@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
-import autoPlay from 'react-swipeable-views/lib/autoPlay'
-import virtualize from 'react-swipeable-views/lib/virtualize'
-import bindKeyboard from 'react-swipeable-views/lib/bindKeyboard'
+import autoPlay from 'react-swipeable-views-utils/lib/autoPlay'
+import virtualize from 'react-swipeable-views-utils/lib/virtualize'
+import bindKeyboard from 'react-swipeable-views-utils/lib/bindKeyboard'
 import SwipeableViews from 'react-swipeable-views'
 import { modulo } from './util'
 
