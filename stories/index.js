@@ -140,10 +140,10 @@ storiesOf('AutoRotatingCarousel', module)
 
 storiesOf('Dots', module)
   .add('three dots', () => themed(
-    <Dots count={3} index={0} style={{ backgroundColor: blue600, width: 200, height: 10, padding: 24 }} />
+    <Dots count={3} index={0} style={{ backgroundColor: blue600, width: 200, height: 8, padding: 24 }} />
   ))
   .add('index changing automatically', () => themed(
-    <AutoRotatingDots count={5} style={{ backgroundColor: blue600, width: 200, height: 10, padding: 24 }} />
+    <AutoRotatingDots count={5} style={{ backgroundColor: blue600, width: 200, height: 8, padding: 24 }} />
   ))
 
 storiesOf('Slide', module)
