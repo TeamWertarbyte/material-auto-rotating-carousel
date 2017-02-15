@@ -72,6 +72,7 @@ render() {
 |onChange        | `function` |            | Fired when the index changed. Returns current index.
 |onRequestClose  | `function` | `noop`     | Fired when the gray background of the popup is pressed when it is open.
 |onStart         | `function` |            | Fired when the user clicks the getting started button.
+|style           | `object`   |            | Override the inline-styles of the root component.
 
 ### Slide Properties
 

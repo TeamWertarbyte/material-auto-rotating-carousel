@@ -241,5 +241,6 @@ AutoRotatingCarousel.propTypes = {
   landscape: PropTypes.bool,
   onChange: PropTypes.func,
   onStart: PropTypes.func,
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  style: PropTypes.object
 }
