@@ -164,7 +164,8 @@ export class AutoRotatingCarousel extends Component {
         }}
         onTouchTap={this.props.onRequestClose}
       >
-        <div style={style.content} onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()} >
+        <div style={{ ...style.content, ...this.props.contentStyle }}
+             onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()}>
           <Paper
             zDepth={this.props.mobile ? 0 : 1}
             style={style.carouselWrapper}>
@@ -235,6 +236,7 @@ export class AutoRotatingCarousel extends Component {
 
 AutoRotatingCarousel.propTypes = {
   autoplay: PropTypes.bool,
+  contentStyle: PropTypes.object,
   interval: PropTypes.number,
   label: PropTypes.string.isRequired,
   mobile: PropTypes.bool,

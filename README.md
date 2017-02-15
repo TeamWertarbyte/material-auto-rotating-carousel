@@ -64,6 +64,7 @@ render() {
 |Name            |Type        |Default     |Description
 |----------------|------------|------------|--------------------------------
 |autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
+|contentStyle    | `object`   |            | Override the inline-styles of the content container.
 |interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
 |label*          | `string`   |            | Button text.
 |landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
