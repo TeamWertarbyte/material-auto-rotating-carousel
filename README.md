@@ -96,4 +96,4 @@ render() {
 The files included in this repository are licensed under the MIT license.
 
 ### Disclaimer
-This is Forked repo from original codebase. The main goal of this repo is the modify some features.
+This is a forked repo from original codebase. The main goal of this repo is to modify some of the features of autorotating-carousel.
