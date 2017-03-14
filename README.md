@@ -94,3 +94,6 @@ render() {
 ## License
 
 The files included in this repository are licensed under the MIT license.
+
+### Disclaimer
+This is Forked repo from original codebase. The main goal of this repo is the modify some features.
