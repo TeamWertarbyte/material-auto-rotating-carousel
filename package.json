@@ -1,7 +1,7 @@
 {
   "name": "material-auto-rotating-carousel",
   "version": "1.3.0",
-  "deiption": "Introduce new users to your app with this material style carousel",
+  "description": "Introduce new users to your app with this material style carousel",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
