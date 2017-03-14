@@ -187,10 +187,12 @@ export class AutoRotatingCarousel extends Component {
           </Paper>
           <div style={landscape ? { minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right' } : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
-              <RaisedButton
-                label={this.props.label}
-                onTouchTap={this.props.onStart}
-              />
+              {this.props.label &&
+                <RaisedButton
+                  label={this.props.label}
+                  onTouchTap={this.props.onStart}
+                />
+              }
               <Dots
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}
@@ -238,7 +240,7 @@ AutoRotatingCarousel.propTypes = {
   autoplay: PropTypes.bool,
   contentStyle: PropTypes.object,
   interval: PropTypes.number,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   mobile: PropTypes.bool,
   landscape: PropTypes.bool,
   onChange: PropTypes.func,

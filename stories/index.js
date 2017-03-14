@@ -10,7 +10,6 @@ import AnimationDemo from './AnimationDemo'
 storiesOf('AutoRotatingCarousel', module)
   .add('desktop', () => themed(
     <AutoRotatingCarousel
-      label="Get started"
       onStart={action('onStart')}
       onChange={(index) => console.log(index)}
       onRequestClose={action('onClose')}
