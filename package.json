@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
-    "prepublish": "babel src -d lib",
+    "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "storybook-to-ghpages"
   },
@@ -31,6 +31,7 @@
     "@kadira/storybook-deployer": "^1.2.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.8.0",
+    "babel-plugin-material-ui": "^0.3.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
