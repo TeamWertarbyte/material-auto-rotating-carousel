@@ -138,17 +138,17 @@ export function Slide (props) {
   const style = mobile ? (landscape ? styles.mobileLandscape : styles.mobile) : styles.desktop
 
   return (
-    <div style={{ ...style.root, ...contentStyle }}>
-      <div style={{ ...style.mediaBackground, ...mediaBackgroundStyle }}>
-        <div style={{ ...style.media, ...mediaStyle }}>{React.cloneElement(media, {
-          style: { ...media.style, maxHeight: '100%' }
+    <div style={{...style.root, ...contentStyle}}>
+      <div style={{...style.mediaBackground, ...mediaBackgroundStyle}}>
+        <div style={{...style.media, ...mediaStyle}}>{React.cloneElement(media, {
+          style: {...media.style, maxHeight: '100%'}
         })}</div>
       </div>
-      <div style={{ ...style.text, ...textStyle }}>
-        <div style={{ ...style.title, ...titleStyle }}>
+      <div style={{...style.text, ...textStyle}}>
+        <div style={{...style.title, ...titleStyle}}>
           {title}
         </div>
-        <p style={{ ...style.subtitle, ...subtitleStyle }}>
+        <p style={{...style.subtitle, ...subtitleStyle}}>
           {subtitle}
         </p>
       </div>

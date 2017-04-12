@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { IconButton, Paper, RaisedButton } from 'material-ui'
 import { grey700 } from 'material-ui/styles/colors'
@@ -26,7 +26,7 @@ const desktopStyles = {
   carouselWrapper: {
     overflow: 'hidden',
     borderRadius: 14,
-    transform:'scale(1.0)',
+    transform: 'scale(1.0)',
     background: 'transparent',
     height: '100%'
   },
@@ -117,41 +117,42 @@ const mobileStyles = {
 }
 
 export class AutoRotatingCarousel extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       slideIndex: 0
     }
   }
+
   static defaultProps = {
     onRequestClose: () => {}
-  };
+  }
 
-  handleChange(slideIndex) {
+  handleChange (slideIndex) {
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
   }
 
-  decreaseIndex() {
+  decreaseIndex () {
     const slideIndex = this.state.slideIndex - 1
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
   }
 
-  increaseIndex() {
+  increaseIndex () {
     const slideIndex = this.state.slideIndex + 1
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
   }
 
-  onChange(slideIndex) {
+  onChange (slideIndex) {
     this.props.onChange ? this.props.onChange(modulo(slideIndex, this.props.children.length)) : null
   }
 
-  render() {
+  render () {
     const style = this.props.mobile ? mobileStyles : desktopStyles
     const landscape = this.props.mobile && this.props.landscape
 
@@ -165,7 +166,7 @@ export class AutoRotatingCarousel extends Component {
         }}
         onTouchTap={this.props.onRequestClose}
       >
-        <div style={{ ...style.content, ...this.props.contentStyle }}
+        <div style={{...style.content, ...this.props.contentStyle}}
              onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()}>
           <Paper
             zDepth={this.props.mobile ? 0 : 1}
@@ -186,7 +187,7 @@ export class AutoRotatingCarousel extends Component {
               }))}
             </Carousel>
           </Paper>
-          <div style={landscape ? { minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right' } : null}>
+          <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
               <RaisedButton
                 label={this.props.label}
@@ -199,35 +200,34 @@ export class AutoRotatingCarousel extends Component {
               />
             </div>
           </div>
-          {!this.props.mobile ?
-              <div>
-                <Paper
-                  style={style.arrowLeft}
-                  circle
-                >
-                  <IconButton
-                    style={style.arrowIconButton}
-                    iconStyle={style.arrowIcon}
-                    onTouchTap={() => this.decreaseIndex()}
-                    touch
-                  >
-                    <ArrowBackIcon />
-                  </IconButton>
-                </Paper>
-                <Paper
-                  style={style.arrowRight}
-                  circle
-                >
-                  <IconButton
-                    style={style.arrowIconButton}
-                    iconStyle={style.arrowIcon}
-                    onTouchTap={() => this.increaseIndex()}
-                    touch
-                  >
-                    <ArrowForwardIcon />
-                  </IconButton>
-                </Paper>
-              </div> : null
+          {!this.props.mobile ? <div>
+            <Paper
+              style={style.arrowLeft}
+              circle
+            >
+              <IconButton
+                style={style.arrowIconButton}
+                iconStyle={style.arrowIcon}
+                onTouchTap={() => this.decreaseIndex()}
+                touch
+              >
+                <ArrowBackIcon />
+              </IconButton>
+            </Paper>
+            <Paper
+              style={style.arrowRight}
+              circle
+            >
+              <IconButton
+                style={style.arrowIconButton}
+                iconStyle={style.arrowIcon}
+                onTouchTap={() => this.increaseIndex()}
+                touch
+              >
+                <ArrowForwardIcon />
+              </IconButton>
+            </Paper>
+          </div> : null
           }
         </div>
       </div>

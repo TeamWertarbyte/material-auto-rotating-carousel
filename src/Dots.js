@@ -22,12 +22,12 @@ export default class Dots extends Component {
     }
   }
 
-  componentWillReceiveProps ({ index }) {
+  componentWillReceiveProps ({index}) {
     if (index !== this.props.index) {
-      this.setState({ previousIndex: this.props.index })
+      this.setState({previousIndex: this.props.index})
       this.timeout = setTimeout(() => {
         this.timeout = null
-        this.setState({ previousIndex: index })
+        this.setState({previousIndex: index})
       }, 450)
     }
   }
@@ -39,12 +39,12 @@ export default class Dots extends Component {
   }
 
   render () {
-    const { count, index, style = {} } = this.props
-    const { previousIndex } = this.state
+    const {count, index, style = {}} = this.props
+    const {previousIndex} = this.state
 
     return (
-      <div style={{ ...style, width: count * 16 }}>
-        <div style={{ position: 'relative' }}>
+      <div style={{...style, width: count * 16}}>
+        <div style={{position: 'relative'}}>
           {[...Array(count).keys()].map((i) => (
             <Paper
               key={i}

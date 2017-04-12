@@ -9,9 +9,9 @@ import { modulo } from './util'
 const VirtualizeAutoPlaySwipeViews = autoPlay(bindKeyboard(virtualize(SwipeableViews)))
 
 const carouselSlideRenderer = (children) =>
-  ({ index, key }) => React.cloneElement(children[modulo(index, children.length)], { key })
+  ({index, key}) => React.cloneElement(children[modulo(index, children.length)], {key})
 
-export default function Carousel ({ children, ...other }) {
+export default function Carousel ({children, ...other}) {
   return (
     <VirtualizeAutoPlaySwipeViews slideRenderer={carouselSlideRenderer(children)} {...other} />
   )
