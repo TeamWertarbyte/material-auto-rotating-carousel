@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import autoPlay from 'react-swipeable-views-utils/lib/autoPlay'
 import virtualize from 'react-swipeable-views-utils/lib/virtualize'
 import bindKeyboard from 'react-swipeable-views-utils/lib/bindKeyboard'

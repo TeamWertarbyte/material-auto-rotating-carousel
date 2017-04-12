@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import { IconButton, Paper, RaisedButton } from 'material-ui'
 import { grey700 } from 'material-ui/styles/colors'
 import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back'

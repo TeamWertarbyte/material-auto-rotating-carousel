@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { blue500, blue700 } from 'material-ui/styles/colors'
 
 const styles = {
