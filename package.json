@@ -34,18 +34,18 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "material-ui": "^0.16.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "material-ui": "^0.17.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-motion": "^0.4.4",
-    "react-swipeable-views": "^0.10.7",
+    "react-swipeable-views": "^0.12.0",
     "react-tap-event-plugin": "^2.0.0"
   },
   "peerDependencies": {
-    "material-ui": "^0.16.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "material-ui": "^0.17.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-motion": "^0.4.4",
-    "react-swipeable-views": "^0.10.7"
+    "react-swipeable-views": "^0.12.0"
   }
 }
