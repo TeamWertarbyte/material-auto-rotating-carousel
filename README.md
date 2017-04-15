@@ -1,5 +1,7 @@
 # Material AutoRotatingCarousel [![Build Status](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-auto-rotating-carousel.svg)](https://greenkeeper.io/)
+
 [![NPM](https://nodei.co/npm/material-auto-rotating-carousel.png?downloads=true&stars=true)](https://nodei.co/npm/material-auto-rotating-carousel/)
 
 So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits)! 
