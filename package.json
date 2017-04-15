@@ -39,7 +39,6 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-motion": "^0.4.7",
     "react-swipeable-views": "^0.12.0",
     "react-tap-event-plugin": "^2.0.1"
   },
@@ -47,7 +46,6 @@
     "material-ui": "^0.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-motion": "^0.4.4",
     "react-swipeable-views": "^0.12.0"
   },
   "dependencies": {
