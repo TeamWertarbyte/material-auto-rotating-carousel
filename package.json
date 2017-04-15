@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/TeamWertarbyte/material-auto-rotating-carousel#readme",
   "devDependencies": {
-    "@kadira/storybook": "^2.5.2",
+    "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-deployer": "^1.2.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.8.0",
@@ -35,16 +35,16 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "material-ui": "^0.17.3",
+    "material-ui": "^0.17.4",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-motion": "^0.4.4",
+    "react-motion": "^0.4.7",
     "react-swipeable-views": "^0.12.0",
-    "react-tap-event-plugin": "^2.0.0"
+    "react-tap-event-plugin": "^2.0.1"
   },
   "peerDependencies": {
-    "material-ui": "^0.17.3",
+    "material-ui": "^0.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-motion": "^0.4.4",
