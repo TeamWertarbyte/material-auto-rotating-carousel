@@ -1,4 +1,7 @@
-# Material AutoRotatingCarousel [![Build Status](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel)
+# Material AutoRotatingCarousel
+
+[![Build Status](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel)
+[![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-auto-rotating-carousel.svg)](https://greenkeeper.io/)
 
 [![NPM](https://nodei.co/npm/material-auto-rotating-carousel.png?downloads=true&stars=true)](https://nodei.co/npm/material-auto-rotating-carousel/)
 
