@@ -31,7 +31,7 @@ export default class AnimationDemo extends React.Component {
         <AutoRotatingCarousel
           label="Get started"
           onStart={action('onStart')}
-          onChange={(index) => console.log(index)}
+          onChange={action('onChange')}
           onRequestClose={() => this.handleClose()}
           open={this.state.open}
         >

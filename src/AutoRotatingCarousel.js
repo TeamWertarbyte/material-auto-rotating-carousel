@@ -59,7 +59,7 @@ const desktopStyles = {
     transform: 'translateY(-50%)'
   },
   dots: {
-    paddingTop: 60,
+    paddingTop: 36,
     margin: '0 auto'
   },
   footer: {
@@ -91,7 +91,6 @@ const mobileStyles = {
   },
   content: {},
   dots: {
-    paddingTop: 24,
     margin: '0 auto'
   },
   dotsLandscape: {
@@ -128,7 +127,7 @@ export class AutoRotatingCarousel extends Component {
     onRequestClose: () => {}
   }
 
-  handleChange (slideIndex) {
+  handleChange = (slideIndex) => {
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
@@ -197,6 +196,7 @@ export class AutoRotatingCarousel extends Component {
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}
                 style={landscape ? style.dotsLandscape : style.dots}
+                onDotClick={this.handleChange}
               />
             </div>
           </div>

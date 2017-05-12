@@ -12,7 +12,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
-      onChange={(index) => console.log(index)}
+      onChange={action('onChange')}
       onRequestClose={action('onClose')}
       open
     >
@@ -43,7 +43,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
-      onChange={(index) => console.log(index)}
+      onChange={action('onChange')}
       onRequestClose={action('onClose')}
       open
       style={{width: 500, height: 350}}
@@ -78,7 +78,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
-      onChange={(index) => console.log(index)}
+      onChange={action('onChange')}
       open
       mobile
     >
@@ -109,7 +109,7 @@ storiesOf('AutoRotatingCarousel', module)
     <AutoRotatingCarousel
       label="Get started"
       onStart={action('onStart')}
-      onChange={(index) => console.log(index)}
+      onChange={action('onChange')}
       open
       mobile
       landscape
@@ -140,10 +140,19 @@ storiesOf('AutoRotatingCarousel', module)
 
 storiesOf('Dots', module)
   .add('three dots', () => themed(
-    <Dots count={3} index={0} style={{backgroundColor: blue600, width: 200, height: 8, padding: 24}}/>
+    <Dots
+      count={3}
+      index={0}
+      style={{backgroundColor: blue600, width: 200, height: 8, padding: '0px 24px 48px'}}
+      onDotClick={action('onDotClick')}
+    />
   ))
   .add('index changing automatically', () => themed(
-    <AutoRotatingDots count={5} style={{backgroundColor: blue600, width: 200, height: 8, padding: 24}}/>
+    <AutoRotatingDots
+      count={5}
+      style={{backgroundColor: blue600, width: 200, height: 8, padding: '0px 24px 48px'}}
+      onDotClick={action('onDotClick')}
+    />
   ))
 
 storiesOf('Slide', module)
