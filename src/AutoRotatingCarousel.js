@@ -70,7 +70,7 @@ const desktopStyles = {
   },
   slide: {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   carousel: {
     height: '100%'
@@ -123,10 +123,6 @@ export class AutoRotatingCarousel extends Component {
     }
   }
 
-  static defaultProps = {
-    onRequestClose: () => {}
-  }
-
   handleChange = (slideIndex) => {
     this.setState({
       slideIndex
@@ -148,7 +144,9 @@ export class AutoRotatingCarousel extends Component {
   }
 
   onChange (slideIndex) {
-    this.props.onChange ? this.props.onChange(modulo(slideIndex, this.props.children.length)) : null
+    if (this.props.onChange) {
+      this.props.onChange(modulo(slideIndex, this.props.children.length))
+    }
   }
 
   render () {
@@ -166,7 +164,7 @@ export class AutoRotatingCarousel extends Component {
         onTouchTap={this.props.onRequestClose}
       >
         <div style={{...style.content, ...this.props.contentStyle}}
-             onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()}>
+          onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()}>
           <Paper
             zDepth={this.props.mobile ? 0 : 1}
             style={style.carouselWrapper}>
@@ -174,7 +172,7 @@ export class AutoRotatingCarousel extends Component {
               autoplay={this.props.open && this.props.autoplay}
               interval={this.props.interval}
               index={this.state.slideIndex}
-              onChangeIndex={(slideIndex) => this.handleChange(slideIndex)}
+              onChangeIndex={this.handleChange}
               style={style.carousel}
               containerStyle={style.carouselContainer}
               slideStyle={style.slide}

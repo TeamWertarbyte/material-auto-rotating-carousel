@@ -1,5 +1,5 @@
 import React from 'react'
-import { storiesOf, action, linkTo } from '@kadira/storybook'
+import { storiesOf, action } from '@kadira/storybook'
 import { green400, green600, blue400, blue600, red400, red600 } from 'material-ui/styles/colors'
 import { AutoRotatingCarousel, Slide } from '../src'
 import Dots from '../src/Dots'
@@ -10,38 +10,38 @@ import AnimationDemo from './AnimationDemo'
 storiesOf('AutoRotatingCarousel', module)
   .add('desktop', () => themed(
     <AutoRotatingCarousel
-      label="Get started"
+      label='Get started'
       onStart={action('onStart')}
       onChange={action('onChange')}
       onRequestClose={action('onClose')}
       open
     >
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
         mediaBackgroundStyle={{backgroundColor: red400}}
         contentStyle={{backgroundColor: red600}}
-        title="This is a very cool feature"
-        subtitle="Just using this will blow your mind."
+        title='This is a very cool feature'
+        subtitle='Just using this will blow your mind.'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' />}
         mediaBackgroundStyle={{backgroundColor: blue400}}
         contentStyle={{backgroundColor: blue600}}
-        title="Ever wanted to be popular?"
-        subtitle="Well just mix two colors and your are good to go!"
+        title='Ever wanted to be popular?'
+        subtitle='Well just mix two colors and your are good to go!'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' />}
         mediaBackgroundStyle={{backgroundColor: green400}}
         contentStyle={{backgroundColor: green600}}
-        title="May the force be with you"
-        subtitle="The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe."
+        title='May the force be with you'
+        subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
       />
     </AutoRotatingCarousel>
   ))
   .add('small desktop', () => themed(
     <AutoRotatingCarousel
-      label="Get started"
+      label='Get started'
       onStart={action('onStart')}
       onChange={action('onChange')}
       onRequestClose={action('onClose')}
@@ -49,25 +49,25 @@ storiesOf('AutoRotatingCarousel', module)
       style={{width: 500, height: 350}}
     >
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
         mediaBackgroundStyle={{backgroundColor: red400}}
         contentStyle={{backgroundColor: red600}}
-        title="This is a very cool feature"
-        subtitle="Just using this will blow your mind."
+        title='This is a very cool feature'
+        subtitle='Just using this will blow your mind.'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' />}
         mediaBackgroundStyle={{backgroundColor: blue400}}
         contentStyle={{backgroundColor: blue600}}
-        title="Ever wanted to be popular?"
-        subtitle="Well just mix two colors and your are good to go!"
+        title='Ever wanted to be popular?'
+        subtitle='Well just mix two colors and your are good to go!'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' />}
         mediaBackgroundStyle={{backgroundColor: green400}}
         contentStyle={{backgroundColor: green600}}
-        title="May the force be with you"
-        subtitle="The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe."
+        title='May the force be with you'
+        subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
       />
     </AutoRotatingCarousel>
   ))
@@ -76,38 +76,38 @@ storiesOf('AutoRotatingCarousel', module)
   ))
   .add('mobile', () => themed(
     <AutoRotatingCarousel
-      label="Get started"
+      label='Get started'
       onStart={action('onStart')}
       onChange={action('onChange')}
       open
       mobile
     >
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
         mediaBackgroundStyle={{backgroundColor: red400}}
         contentStyle={{backgroundColor: red600}}
-        title="This is a very cool feature"
-        subtitle="Just using this will blow your mind."
+        title='This is a very cool feature'
+        subtitle='Just using this will blow your mind.'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' />}
         mediaBackgroundStyle={{backgroundColor: blue400}}
         contentStyle={{backgroundColor: blue600}}
-        title="Ever wanted to be popular?"
-        subtitle="Well just mix two colors and your are good to go!"
+        title='Ever wanted to be popular?'
+        subtitle='Well just mix two colors and your are good to go!'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' />}
         mediaBackgroundStyle={{backgroundColor: green400}}
         contentStyle={{backgroundColor: green600}}
-        title="May the force be with you"
-        subtitle="The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe."
+        title='May the force be with you'
+        subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
       />
     </AutoRotatingCarousel>
   ))
   .add('mobile landscape', () => themed(
     <AutoRotatingCarousel
-      label="Get started"
+      label='Get started'
       onStart={action('onStart')}
       onChange={action('onChange')}
       open
@@ -115,25 +115,25 @@ storiesOf('AutoRotatingCarousel', module)
       landscape
     >
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
         mediaBackgroundStyle={{backgroundColor: red400}}
         contentStyle={{backgroundColor: red600}}
-        title="This is a very cool feature"
-        subtitle="Just using this will blow your mind."
+        title='This is a very cool feature'
+        subtitle='Just using this will blow your mind.'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' />}
         mediaBackgroundStyle={{backgroundColor: blue400}}
         contentStyle={{backgroundColor: blue600}}
-        title="Ever wanted to be popular?"
-        subtitle="Well just mix two colors and your are good to go!"
+        title='Ever wanted to be popular?'
+        subtitle='Well just mix two colors and your are good to go!'
       />
       <Slide
-        media={<img src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png"/>}
+        media={<img src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' />}
         mediaBackgroundStyle={{backgroundColor: green400}}
         contentStyle={{backgroundColor: green600}}
-        title="May the force be with you"
-        subtitle="The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe."
+        title='May the force be with you'
+        subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
       />
     </AutoRotatingCarousel>
   ))
@@ -158,20 +158,20 @@ storiesOf('Dots', module)
 storiesOf('Slide', module)
   .add('with media', () => themed(
     <Slide
-      media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"/>}
+      media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
       mediaBackgroundStyle={{backgroundColor: red400}}
       contentStyle={{backgroundColor: red600, height: 500, width: 400}}
-      title="This is a very cool feature"
-      subtitle="Just using this will blow your mind."
+      title='This is a very cool feature'
+      subtitle='Just using this will blow your mind.'
     />
   ))
   .add('landscape with media', () => themed(
     <Slide
-      media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"/>}
+      media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
       mediaBackgroundStyle={{backgroundColor: red400}}
       contentStyle={{backgroundColor: red600, height: 400, width: 800}}
-      title="This is a very cool feature"
-      subtitle="Just using this will blow your mind."
+      title='This is a very cool feature'
+      subtitle='Just using this will blow your mind.'
       mobile
       landscape
     />

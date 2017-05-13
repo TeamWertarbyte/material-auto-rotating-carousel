@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel)
 [![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-auto-rotating-carousel.svg)](https://greenkeeper.io/)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [![NPM](https://nodei.co/npm/material-auto-rotating-carousel.png?downloads=true&stars=true)](https://nodei.co/npm/material-auto-rotating-carousel/)
 
