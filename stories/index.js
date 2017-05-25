@@ -2,9 +2,7 @@ import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 import { green400, green600, blue400, blue600, red400, red600 } from 'material-ui/styles/colors'
 import { AutoRotatingCarousel, Slide } from '../src'
-import Dots from '../src/Dots'
 import { themed } from './storyUtil'
-import AutoRotatingDots from './AutoRotatingDots'
 import AnimationDemo from './AnimationDemo'
 
 storiesOf('AutoRotatingCarousel', module)
@@ -136,23 +134,6 @@ storiesOf('AutoRotatingCarousel', module)
         subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
       />
     </AutoRotatingCarousel>
-  ))
-
-storiesOf('Dots', module)
-  .add('three dots', () => themed(
-    <Dots
-      count={3}
-      index={0}
-      style={{backgroundColor: blue600, width: 200, height: 8, padding: '0px 24px 48px'}}
-      onDotClick={action('onDotClick')}
-    />
-  ))
-  .add('index changing automatically', () => themed(
-    <AutoRotatingDots
-      count={5}
-      style={{backgroundColor: blue600, width: 200, height: 8, padding: '0px 24px 48px'}}
-      onDotClick={action('onDotClick')}
-    />
   ))
 
 storiesOf('Slide', module)

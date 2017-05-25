@@ -4,7 +4,7 @@ import { IconButton, Paper, RaisedButton } from 'material-ui'
 import { grey700 } from 'material-ui/styles/colors'
 import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back'
 import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward'
-import Dots from './Dots'
+import Dots from 'material-ui-dots'
 import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
 
