@@ -38,7 +38,6 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "material-ui": "^0.18.0",
-    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-swipeable-views": "^0.12.0",
