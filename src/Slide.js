@@ -157,15 +157,32 @@ export function Slide (props) {
 }
 
 Slide.propTypes = {
+  /** Override the inline-styles of the content. */
   contentStyle: PropTypes.object,
+  /** Object to display in the upper half. */
   media: PropTypes.node.isRequired,
+  /** Override the inline-styles of the media container. */
   mediaBackgroundStyle: PropTypes.object,
+  /** Override the inline-styles of the media. */
   mediaStyle: PropTypes.object,
+  /** Subtitle of the slide. */
   subtitle: PropTypes.string.isRequired,
+  /** Override the inline-styles of the subtitle. */
   subtitleStyle: PropTypes.object,
+  /** Override the inline-styles of the text container. */
   textStyle: PropTypes.object,
+  /** Title of the slide. */
   title: PropTypes.string.isRequired,
+  /** Override the inline-styles of the title. */
   titleStyle: PropTypes.object,
+  /**
+   * If `true`, the screen width and height is filled.
+   * @ignore
+   */
   mobile: PropTypes.bool,
+  /**
+   * If `true`, slide will adjust content for wide mobile screens.
+   * @ignore
+   */
   landscape: PropTypes.bool
 }

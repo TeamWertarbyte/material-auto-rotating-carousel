@@ -233,15 +233,34 @@ export class AutoRotatingCarousel extends Component {
   }
 }
 
+AutoRotatingCarousel.defaultProps = {
+  autoplay: true,
+  interval: 3000,
+  mobile: false,
+  open: false
+}
+
 AutoRotatingCarousel.propTypes = {
+  /** If `false`, the auto play behavior is disabled. */
   autoplay: PropTypes.bool,
+  /** Override the inline-styles of the content container. */
   contentStyle: PropTypes.object,
+  /** Delay between auto play transitions (in ms). */
   interval: PropTypes.number,
+  /** Button text. */
   label: PropTypes.string.isRequired,
-  mobile: PropTypes.bool,
+  /** If `true`, slide will adjust content for wide mobile screens. */
   landscape: PropTypes.bool,
+  /** If `true`, the screen width and height is filled. */
+  mobile: PropTypes.bool,
+  /** Fired when the index changed. Returns current index. */
   onChange: PropTypes.func,
+  /** Fired when the gray background of the popup is pressed when it is open. */
+  onRequestClose: PropTypes.func,
+  /** Fired when the user clicks the getting started button. */
   onStart: PropTypes.func,
+  /** Controls whether the AutoRotatingCarousel is opened or not. */
   open: PropTypes.bool,
+  /** Override the inline-styles of the root component. */
   style: PropTypes.object
 }
