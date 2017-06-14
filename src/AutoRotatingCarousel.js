@@ -115,7 +115,7 @@ const mobileStyles = {
   }
 }
 
-export class AutoRotatingCarousel extends Component {
+export default class AutoRotatingCarousel extends Component {
   constructor (props) {
     super(props)
     this.state = {

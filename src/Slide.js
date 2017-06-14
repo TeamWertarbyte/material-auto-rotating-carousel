@@ -120,7 +120,7 @@ const styles = {
   }
 }
 
-export function Slide (props) {
+export default function Slide (props) {
   const {
     contentStyle,
     media,

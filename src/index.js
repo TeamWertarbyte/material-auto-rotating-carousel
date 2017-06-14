@@ -1,2 +1,2 @@
-export { AutoRotatingCarousel } from './AutoRotatingCarousel'
-export { Slide } from './Slide'
+export { default as AutoRotatingCarousel } from './AutoRotatingCarousel'
+export { default as Slide } from './Slide'
