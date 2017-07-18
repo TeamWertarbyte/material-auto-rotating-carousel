@@ -186,10 +186,10 @@ export default class AutoRotatingCarousel extends Component {
           </Paper>
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
-              <RaisedButton
+              {this.props.label && <RaisedButton
                 label={this.props.label}
                 onTouchTap={this.props.onStart}
-              />
+              />}
               <Dots
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}

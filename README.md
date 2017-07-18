@@ -6,7 +6,7 @@
 
 [![NPM](https://nodei.co/npm/material-auto-rotating-carousel.png?downloads=true&stars=true)](https://nodei.co/npm/material-auto-rotating-carousel/)
 
-So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits)! 
+So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits)!
 
 This project implements such a carousel for [material-ui](https://material-ui.com). See [the storybook](https://teamwertarbyte.github.io/material-auto-rotating-carousel) for an interactive demo.
 
@@ -70,7 +70,7 @@ render() {
 |autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
 |contentStyle    | `object`   |            | Override the inline-styles of the content container.
 |interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
-|label*          | `string`   |            | Button text.
+|label           | `string`   |            | Button text.  If not supplied, the button will be hidden.
 |landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
 |mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
 |open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
