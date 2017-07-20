@@ -247,8 +247,8 @@ AutoRotatingCarousel.propTypes = {
   contentStyle: PropTypes.object,
   /** Delay between auto play transitions (in ms). */
   interval: PropTypes.number,
-  /** Button text. */
-  label: PropTypes.string.isRequired,
+  /** Button text. If not supplied, the button will be hidden. */
+  label: PropTypes.string,
   /** If `true`, slide will adjust content for wide mobile screens. */
   landscape: PropTypes.bool,
   /** If `true`, the screen width and height is filled. */

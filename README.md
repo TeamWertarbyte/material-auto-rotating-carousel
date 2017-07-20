@@ -70,7 +70,7 @@ render() {
 |autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
 |contentStyle    | `object`   |            | Override the inline-styles of the content container.
 |interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
-|label           | `string`   |            | Button text.  If not supplied, the button will be hidden.
+|label           | `string`   |            | Button text. If not supplied, the button will be hidden.
 |landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
 |mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
 |open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
