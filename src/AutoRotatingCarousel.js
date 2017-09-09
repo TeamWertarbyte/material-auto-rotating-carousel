@@ -161,10 +161,10 @@ export default class AutoRotatingCarousel extends Component {
           opacity: this.props.open ? '1' : '0',
           ...this.props.style
         }}
-        onTouchTap={this.props.onRequestClose}
+        onClick={this.props.onRequestClose}
       >
         <div style={{...style.content, ...this.props.contentStyle}}
-          onTouchTap={evt => evt.stopPropagation() || evt.preventDefault()}>
+          onClick={evt => evt.stopPropagation() || evt.preventDefault()}>
           <Paper
             zDepth={this.props.mobile ? 0 : 1}
             style={style.carouselWrapper}>
@@ -188,7 +188,7 @@ export default class AutoRotatingCarousel extends Component {
             <div style={landscape ? style.footerLandscape : style.footer}>
               {this.props.label && <RaisedButton
                 label={this.props.label}
-                onTouchTap={this.props.onStart}
+                onClick={this.props.onStart}
               />}
               <Dots
                 count={this.props.children.length}
@@ -206,7 +206,7 @@ export default class AutoRotatingCarousel extends Component {
               <IconButton
                 style={style.arrowIconButton}
                 iconStyle={style.arrowIcon}
-                onTouchTap={() => this.decreaseIndex()}
+                onClick={() => this.decreaseIndex()}
                 touch
               >
                 <ArrowBackIcon />
@@ -219,7 +219,7 @@ export default class AutoRotatingCarousel extends Component {
               <IconButton
                 style={style.arrowIconButton}
                 iconStyle={style.arrowIcon}
-                onTouchTap={() => this.increaseIndex()}
+                onClick={() => this.increaseIndex()}
                 touch
               >
                 <ArrowForwardIcon />
