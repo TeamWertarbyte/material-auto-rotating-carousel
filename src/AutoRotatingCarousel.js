@@ -198,7 +198,7 @@ export default class AutoRotatingCarousel extends Component {
               />
             </div>
           </div>
-          {!this.props.mobile ? <div>
+          {!this.props.mobile && !this.props.hideArrow ? <div>
             <Paper
               style={style.arrowLeft}
               circle
@@ -237,7 +237,8 @@ AutoRotatingCarousel.defaultProps = {
   autoplay: true,
   interval: 3000,
   mobile: false,
-  open: false
+  open: false,
+  hideArrow: false
 }
 
 AutoRotatingCarousel.propTypes = {
@@ -262,5 +263,7 @@ AutoRotatingCarousel.propTypes = {
   /** Controls whether the AutoRotatingCarousel is opened or not. */
   open: PropTypes.bool,
   /** Override the inline-styles of the root component. */
-  style: PropTypes.object
+  style: PropTypes.object,
+  /** If `true`, the left and right arrow would be hiddened. */
+  hideArrow: PropTypes.bool
 }
