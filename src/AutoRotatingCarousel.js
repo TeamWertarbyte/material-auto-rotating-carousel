@@ -198,7 +198,7 @@ export default class AutoRotatingCarousel extends Component {
               />
             </div>
           </div>
-          {!this.props.mobile && !this.props.hideArrow ? <div>
+          {!this.props.mobile && !this.props.hideArrows ? <div>
             <Paper
               style={style.arrowLeft}
               circle
@@ -238,7 +238,7 @@ AutoRotatingCarousel.defaultProps = {
   interval: 3000,
   mobile: false,
   open: false,
-  hideArrow: false
+  hideArrows: false
 }
 
 AutoRotatingCarousel.propTypes = {
@@ -264,6 +264,6 @@ AutoRotatingCarousel.propTypes = {
   open: PropTypes.bool,
   /** Override the inline-styles of the root component. */
   style: PropTypes.object,
-  /** If `true`, the left and right arrow would be hiddened. */
-  hideArrow: PropTypes.bool
+  /** If `true`, the left and right arrows are hidden in the desktop version. */
+  hideArrows: PropTypes.bool
 }
