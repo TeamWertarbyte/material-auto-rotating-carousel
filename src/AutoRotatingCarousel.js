@@ -167,15 +167,15 @@ export default class AutoRotatingCarousel extends Component {
           onClick={evt => evt.stopPropagation() || evt.preventDefault()}>
           <Paper
             zDepth={this.props.mobile ? 0 : 1}
-            style={style.carouselWrapper}>
+            style={{...style.carouselWrapper, ...this.props.carouselWrapper}}>
             <Carousel
               autoplay={this.props.open && this.props.autoplay}
               interval={this.props.interval}
               index={this.state.slideIndex}
               onChangeIndex={this.handleChange}
-              style={style.carousel}
-              containerStyle={style.carouselContainer}
-              slideStyle={style.slide}
+              style={{...style.carousel, ...this.props.carousel}}
+              containerStyle={{...style.carouselContainer, ...this.props.carouselContainer}}
+              slideStyle={{...style.slide, ...this.props.slide}}
             >
               {this.props.children.map((c, i) => React.cloneElement(c, {
                 mobile: this.props.mobile,
@@ -185,7 +185,7 @@ export default class AutoRotatingCarousel extends Component {
             </Carousel>
           </Paper>
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
-            <div style={landscape ? style.footerLandscape : style.footer}>
+            <div style={landscape ? {...style.footerLandscape, ...this.props.footerLandscape} : {...style.footer, ...this.props.footer}}>
               {this.props.label && <RaisedButton
                 label={this.props.label}
                 onClick={this.props.onStart}
@@ -193,19 +193,19 @@ export default class AutoRotatingCarousel extends Component {
               <Dots
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}
-                style={landscape ? style.dotsLandscape : style.dots}
+                style={landscape ? {...style.dotsLandscape, ...this.props.dotsLandscape} : {...style.dots, ...this.props.dots}}
                 onDotClick={this.handleChange}
               />
             </div>
           </div>
           {!this.props.mobile && !this.props.hideArrows ? <div>
             <Paper
-              style={style.arrowLeft}
+              style={{...style.arrowLeft, ...this.props.arrowLeft}}
               circle
             >
               <IconButton
-                style={style.arrowIconButton}
-                iconStyle={style.arrowIcon}
+                style={{...style.arrowIconButton, ...this.props.arrowIconButton}}
+                iconStyle={{...style.arrowIcon, ...this.props.arrowIcon}}
                 onClick={() => this.decreaseIndex()}
                 touch
               >
@@ -213,12 +213,12 @@ export default class AutoRotatingCarousel extends Component {
               </IconButton>
             </Paper>
             <Paper
-              style={style.arrowRight}
+              style={{...style.arrowRight, ...this.props.arrowRight}}
               circle
             >
               <IconButton
-                style={style.arrowIconButton}
-                iconStyle={style.arrowIcon}
+                style={{...style.arrowIconButton, ...this.props.arrowIconButton}}
+                iconStyle={{...style.arrowIcon, ...this.props.arrowIcon}}
                 onClick={() => this.increaseIndex()}
                 touch
               >
