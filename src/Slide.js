@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { blue500, blue700 } from 'material-ui/styles/colors'
+import { blue } from 'material-ui/colors'
 
 const styles = {
   mobile: {
     root: {
       color: 'white',
-      backgroundColor: blue500,
+      backgroundColor: blue[500],
       height: '100%'
     },
     media: {
@@ -15,7 +15,7 @@ const styles = {
       transform: 'translateY(-50%)'
     },
     mediaBackground: {
-      backgroundColor: blue700,
+      backgroundColor: blue[700],
       height: 'calc(100% - 241px)',
       textAlign: 'center'
     },
@@ -41,7 +41,7 @@ const styles = {
   mobileLandscape: {
     root: {
       color: 'white',
-      backgroundColor: blue500,
+      backgroundColor: blue[500],
       height: '100%',
       width: '100%',
       display: 'flex',
@@ -53,7 +53,7 @@ const styles = {
       transform: 'translateY(-50%)'
     },
     mediaBackground: {
-      backgroundColor: blue700,
+      backgroundColor: blue[700],
       height: '100%',
       textAlign: 'center',
       flex: '1 1',
@@ -82,7 +82,7 @@ const styles = {
   desktop: {
     root: {
       color: 'white',
-      backgroundColor: blue500,
+      backgroundColor: blue[500],
       height: '100%'
     },
     media: {
@@ -92,7 +92,7 @@ const styles = {
       alignItems: 'center'
     },
     mediaBackground: {
-      backgroundColor: blue700,
+      backgroundColor: blue[700],
       height: 'calc(100% - 216px)',
       textAlign: 'center'
     },
