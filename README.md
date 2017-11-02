@@ -76,9 +76,7 @@ render() {
 |carouselStyle        | `object`   |            | Override the inline-styles of the carousel.
 |carouselWrapperStyle | `object`   |            | Override the inline-styles of the carousel wrapper.
 |contentStyle         | `object`   |            | Override the inline-styles of the content container.
-|dotsLandscapeStyle   | `object`   |            | Override the inline-styles of the footer dots when in landscape mode.
 |dotsStyle            | `object`   |            | Override the inline-styles of the footer dots when not in landscape mode.
-|footerLandscapeStyle | `object`   |            | Override the inline-styles of the footer when in landscape mode.
 |footerStyle          | `object`   |            | Override the inline-styles of the footer when not in landscape mode.
 |interval             | `integer`  | `3000`     | Delay between auto play transitions (in ms).
 |label                | `string`   |            | Button text. If not supplied, the button will be hidden.
@@ -88,7 +86,6 @@ render() {
 |onChange             | `function` |            | Fired when the index changed. Returns current index.
 |onRequestClose       | `function` |            | Fired when the gray background of the popup is pressed when it is open.
 |onStart              | `function` |            | Fired when the user clicks the getting started button.
-|slideStyle           | `object`   |            | Override the inline-styles of the slide container.
 |style                | `object`   |            | Override the inline-styles of the root component.
 
 

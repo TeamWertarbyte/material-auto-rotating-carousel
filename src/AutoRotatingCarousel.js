@@ -175,7 +175,7 @@ export default class AutoRotatingCarousel extends Component {
               onChangeIndex={this.handleChange}
               style={{...style.carousel, ...this.props.carouselStyle}}
               containerStyle={{...style.carouselContainer, ...this.props.carouselContainerStyle}}
-              slideStyle={{...style.slide, ...this.props.slideStyle}}
+              slideStyle={style.slide}
             >
               {this.props.children.map((c, i) => React.cloneElement(c, {
                 mobile: this.props.mobile,
@@ -185,7 +185,7 @@ export default class AutoRotatingCarousel extends Component {
             </Carousel>
           </Paper>
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
-            <div style={landscape ? {...style.footerLandscape, ...this.props.footerLandscapeStyle} : {...style.footer, ...this.props.footerStyle}}>
+            <div style={landscape ? style.footerLandscape : style.footer}>
               {this.props.label && <RaisedButton
                 label={this.props.label}
                 onClick={this.props.onStart}
@@ -193,7 +193,7 @@ export default class AutoRotatingCarousel extends Component {
               <Dots
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}
-                style={landscape ? {...style.dotsLandscape, ...this.props.dotsLandscapeStyle} : {...style.dots, ...this.props.dotsStyle}}
+                style={landscape ? style.dotsLandscape : style.dots}
                 onDotClick={this.handleChange}
               />
             </div>
