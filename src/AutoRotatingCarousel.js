@@ -195,6 +195,7 @@ export default class AutoRotatingCarousel extends Component {
                 index={modulo(this.state.slideIndex, this.props.children.length)}
                 style={landscape ? style.dotsLandscape : style.dots}
                 onDotClick={this.handleChange}
+                dotColor={this.props.dotColor}
               />
             </div>
           </div>
@@ -265,5 +266,7 @@ AutoRotatingCarousel.propTypes = {
   /** Override the inline-styles of the root component. */
   style: PropTypes.object,
   /** If `true`, the left and right arrows are hidden in the desktop version. */
-  hideArrows: PropTypes.bool
+  hideArrows: PropTypes.bool,
+  /** Color of the dots used */
+  dotColor: PropTypes.string
 }
