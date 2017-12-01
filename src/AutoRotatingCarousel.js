@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, Paper, RaisedButton } from 'material-ui'
-import { grey700 } from 'material-ui/styles/colors'
-import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back'
-import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward'
+import { IconButton, Paper, Button } from 'material-ui'
+import { grey } from 'material-ui/colors'
+import ArrowBackIcon from 'material-ui-icons/ArrowBack'
+import ArrowForwardIcon from 'material-ui-icons/ArrowForward'
 import Dots from 'material-ui-dots'
 import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
@@ -36,7 +36,7 @@ const desktopStyles = {
     padding: 4
   },
   arrowIcon: {
-    color: grey700
+    color: grey[700]
   },
   root: {
     height: '100%',
@@ -186,10 +186,10 @@ export default class AutoRotatingCarousel extends Component {
           </Paper>
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
-              {this.props.label && <RaisedButton
-                label={this.props.label}
+              {this.props.label && <Button
+                raised
                 onClick={this.props.onStart}
-              />}
+              >{this.props.label}</Button>}
               <Dots
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}
