@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Button, IconButton, Paper } from 'material-ui'
+import { Button, Paper } from 'material-ui'
 import { grey } from 'material-ui/colors'
 import ArrowBackIcon from 'material-ui-icons/ArrowBack'
 import ArrowForwardIcon from 'material-ui-icons/ArrowForward'
@@ -29,11 +29,6 @@ const desktopStyles = {
     transform: 'scale(1.0)',
     background: 'transparent',
     height: '100%'
-  },
-  arrowIconButton: {
-    width: 48,
-    height: 48,
-    padding: 4
   },
   arrowIcon: {
     color: grey[700]
