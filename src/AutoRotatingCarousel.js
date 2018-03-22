@@ -182,7 +182,7 @@ export default class AutoRotatingCarousel extends Component {
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
               {this.props.label && <Button
-                variant="raised"
+                variant='raised'
                 onClick={this.props.onStart}
               >
                 {this.props.label}
@@ -198,14 +198,14 @@ export default class AutoRotatingCarousel extends Component {
           </div>
           {!this.props.mobile && !this.props.hideArrows ? <div>
             <Button
-              variant="fab"
+              variant='fab'
               style={style.arrowLeft}
               onClick={() => this.decreaseIndex()}
             >
               <ArrowBackIcon style={style.arrowIcon} />
             </Button>
             <Button
-              variant="fab"
+              variant='fab'
               style={style.arrowRight}
               onClick={() => this.increaseIndex()}
             >
