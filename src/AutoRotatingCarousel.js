@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, Paper, RaisedButton } from 'material-ui'
-import { grey700 } from 'material-ui/styles/colors'
-import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back'
-import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward'
+import { Button, Paper } from 'material-ui'
+import { grey } from 'material-ui/colors'
+import ArrowBackIcon from 'material-ui-icons/ArrowBack'
+import ArrowForwardIcon from 'material-ui-icons/ArrowForward'
 import Dots from 'material-ui-dots'
 import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
@@ -30,13 +30,8 @@ const desktopStyles = {
     background: 'transparent',
     height: '100%'
   },
-  arrowIconButton: {
-    width: 48,
-    height: 48,
-    padding: 4
-  },
   arrowIcon: {
-    color: grey700
+    color: grey[700]
   },
   root: {
     height: '100%',
@@ -166,7 +161,7 @@ export default class AutoRotatingCarousel extends Component {
         <div style={{...style.content, ...this.props.contentStyle}}
           onClick={evt => evt.stopPropagation() || evt.preventDefault()}>
           <Paper
-            zDepth={this.props.mobile ? 0 : 1}
+            elevation={this.props.mobile ? 0 : 1}
             style={style.carouselWrapper}>
             <Carousel
               autoplay={this.props.open && this.props.autoplay}
@@ -186,10 +181,12 @@ export default class AutoRotatingCarousel extends Component {
           </Paper>
           <div style={landscape ? {minWidth: 300, maxWidth: 'calc(50% - 48px)', padding: 24, float: 'right'} : null}>
             <div style={landscape ? style.footerLandscape : style.footer}>
-              {this.props.label && <RaisedButton
-                label={this.props.label}
+              {this.props.label && <Button
+                variant='raised'
                 onClick={this.props.onStart}
-              />}
+              >
+                {this.props.label}
+              </Button>}
               <Dots
                 count={this.props.children.length}
                 index={modulo(this.state.slideIndex, this.props.children.length)}
@@ -200,32 +197,20 @@ export default class AutoRotatingCarousel extends Component {
             </div>
           </div>
           {!this.props.mobile && !this.props.hideArrows ? <div>
-            <Paper
+            <Button
+              variant='fab'
               style={style.arrowLeft}
-              circle
+              onClick={() => this.decreaseIndex()}
             >
-              <IconButton
-                style={style.arrowIconButton}
-                iconStyle={style.arrowIcon}
-                onClick={() => this.decreaseIndex()}
-                touch
-              >
-                <ArrowBackIcon />
-              </IconButton>
-            </Paper>
-            <Paper
+              <ArrowBackIcon style={style.arrowIcon} />
+            </Button>
+            <Button
+              variant='fab'
               style={style.arrowRight}
-              circle
+              onClick={() => this.increaseIndex()}
             >
-              <IconButton
-                style={style.arrowIconButton}
-                iconStyle={style.arrowIcon}
-                onClick={() => this.increaseIndex()}
-                touch
-              >
-                <ArrowForwardIcon />
-              </IconButton>
-            </Paper>
+              <ArrowForwardIcon style={style.arrowIcon} />
+            </Button>
           </div> : null
           }
         </div>
