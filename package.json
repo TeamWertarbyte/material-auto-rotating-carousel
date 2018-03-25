@@ -54,7 +54,7 @@
     "react-swipeable-views": "^0.12.0"
   },
   "dependencies": {
-    "material-ui-dots": "^1.2.0",
+    "material-ui-dots": "^2.0.0-pre.1",
     "prop-types": "^15.5.8"
   },
   "standard": {
