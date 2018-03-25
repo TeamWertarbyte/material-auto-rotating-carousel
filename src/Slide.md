@@ -15,7 +15,7 @@ const { red } = require('material-ui/colors');
 
 ### Landscape mode
 ```
-const { red } = require('material-ui/styles/colors');
+const { red } = require('material-ui/colors');
 
 <Slide
   media={<img src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
