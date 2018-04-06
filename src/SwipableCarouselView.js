@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import autoPlay from 'react-swipeable-views-utils/lib/autoPlay'
 import virtualize from 'react-swipeable-views-utils/lib/virtualize'
 import bindKeyboard from 'react-swipeable-views-utils/lib/bindKeyboard'
@@ -15,12 +14,4 @@ export default function Carousel ({children, ...other}) {
   return (
     <VirtualizeAutoPlaySwipeViews slideRenderer={carouselSlideRenderer(children)} {...other} />
   )
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  Carousel.propTypes = {
-    ...VirtualizeAutoPlaySwipeViews.propTypes,
-    children: PropTypes.node
-  }
-  delete Carousel.propTypes.slideRenderer
 }
