@@ -1,154 +1,121 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { blue } from 'material-ui/colors'
+import withStyles from 'material-ui/styles/withStyles'
+import classNames from 'classnames'
 
 const styles = {
-  mobile: {
-    root: {
-      color: 'white',
-      backgroundColor: blue[500],
-      height: '100%'
-    },
-    media: {
-      position: 'relative',
-      top: '50%',
-      transform: 'translateY(-50%)'
-    },
-    mediaBackground: {
-      backgroundColor: blue[700],
-      height: 'calc(100% - 241px)',
-      textAlign: 'center'
-    },
-    subtitle: {
-      fontSize: '15px',
-      fontWeight: 400,
-      lineHeight: '18px',
-      margin: 0
-    },
-    text: {
-      textAlign: 'center',
-      maxWidth: '80%',
-      margin: '0 auto',
-      paddingTop: 30
-    },
-    title: {
-      fontSize: '24px',
-      fontWeight: 700,
-      lineHeight: '32px',
+  root: {
+    color: 'white',
+    backgroundColor: blue[500],
+    height: '100%'
+  },
+  rootMobileLandscape: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row'
+  },
+  media: {
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    '& > *': {
+      maxHeight: '100%'
+    }
+  },
+  mediaMobile: {
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)'
+  },
+  mediaMobileLandscape: {},
+  mediaBackground: {
+    backgroundColor: blue[700],
+    height: 'calc(100% - 216px)',
+    textAlign: 'center'
+  },
+  mediaBackgroundMobile: {
+    height: 'calc(100% - 241px)'
+  },
+  mediaBackgroundMobileLandscape: {
+    height: '100%',
+    flex: '1 1',
+    alignSelf: 'stretch'
+  },
+  text: {
+    textAlign: 'center',
+    maxWidth: '80%',
+    margin: '0 auto',
+    paddingTop: 32
+  },
+  textMobile: {
+    paddingTop: 30,
+    '& $title': {
       marginBottom: 8
     }
   },
-  mobileLandscape: {
-    root: {
-      color: 'white',
-      backgroundColor: blue[500],
-      height: '100%',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'row'
-    },
-    media: {
-      position: 'relative',
-      top: '50%',
-      transform: 'translateY(-50%)'
-    },
-    mediaBackground: {
-      backgroundColor: blue[700],
-      height: '100%',
-      textAlign: 'center',
-      flex: '1 1',
-      alignSelf: 'stretch'
-    },
-    subtitle: {
-      fontSize: '15px',
-      fontWeight: 400,
-      lineHeight: '18px',
-      margin: 0
-    },
-    text: {
-      minWidth: 300,
-      maxWidth: 'calc(50% - 48px)',
-      padding: '24px 24px 128px',
-      flex: '0 1',
-      alignSelf: 'center'
-    },
-    title: {
-      fontSize: '24px',
-      fontWeight: 700,
-      lineHeight: '32px',
-      marginBottom: 8
-    }
+  textMobileLandscape: {
+    minWidth: 300,
+    maxWidth: 'calc(50% - 48px)',
+    padding: '24px 24px 128px',
+    flex: '0 1',
+    alignSelf: 'center',
+    textAlign: 'left'
   },
-  desktop: {
-    root: {
-      color: 'white',
-      backgroundColor: blue[500],
-      height: '100%'
-    },
-    media: {
-      height: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    mediaBackground: {
-      backgroundColor: blue[700],
-      height: 'calc(100% - 216px)',
-      textAlign: 'center'
-    },
-    subtitle: {
-      fontSize: '15px',
-      fontWeight: 400,
-      lineHeight: '18px',
-      margin: 0
-    },
-    text: {
-      textAlign: 'center',
-      maxWidth: '80%',
-      margin: '0 auto',
-      paddingTop: 32
-    },
-    title: {
-      fontSize: '24px',
-      fontWeight: 700,
-      lineHeight: '32px',
-      marginBottom: 12,
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-      overflow: 'hidden'
-    }
+  title: {
+    fontSize: '24px',
+    fontWeight: 700,
+    lineHeight: '32px',
+    marginBottom: 12,
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden'
+  },
+  subtitle: {
+    fontSize: '15px',
+    fontWeight: 400,
+    lineHeight: '18px',
+    margin: 0
   }
 }
 
-export default function Slide (props) {
+function Slide (props) {
   const {
-    contentStyle,
+    classes,
     media,
-    mediaBackgroundStyle,
-    mediaStyle,
     subtitle,
-    subtitleStyle,
-    textStyle,
     title,
-    titleStyle,
     mobile,
-    landscape
+    landscape: landscapeProp
   } = props
 
-  const style = mobile ? (landscape ? styles.mobileLandscape : styles.mobile) : styles.desktop
+  const mobileLandscape = mobile && landscapeProp
 
   return (
-    <div style={{...style.root, ...contentStyle}}>
-      <div style={{...style.mediaBackground, ...mediaBackgroundStyle}}>
-        <div style={{...style.media, ...mediaStyle}}>{React.cloneElement(media, {
-          style: {...media.style, maxHeight: '100%'}
-        })}</div>
+    <div className={classNames(classes.root, {
+      [classes.rootMobile]: mobile,
+      [classes.rootMobileLandscape]: mobileLandscape
+    })}>
+      <div className={classNames(classes.mediaBackground, {
+        [classes.mediaBackgroundMobile]: mobile,
+        [classes.mediaBackgroundMobileLandscape]: mobileLandscape
+      })}>
+        <div className={classNames(classes.media, {
+          [classes.mediaMobile]: mobile,
+          [classes.mediaMobileLandscape]: mobileLandscape
+        })}>
+          {media}
+        </div>
       </div>
-      <div style={{...style.text, ...textStyle}}>
-        <div style={{...style.title, ...titleStyle}}>
+      <div className={classNames(classes.text, {
+        [classes.textMobile]: mobile,
+        [classes.textMobileLandscape]: mobileLandscape
+      })}>
+        <div className={classes.title}>
           {title}
         </div>
-        <p style={{...style.subtitle, ...subtitleStyle}}>
+        <p className={classes.subtitle}>
           {subtitle}
         </p>
       </div>
@@ -157,24 +124,22 @@ export default function Slide (props) {
 }
 
 Slide.propTypes = {
-  /** Override the inline-styles of the content. */
-  contentStyle: PropTypes.object,
-  /** Object to display in the upper half. */
+  /**
+   * Useful to extend the style applied to components.
+   */
+  classes: PropTypes.object.isRequired,
+  /**
+   * Object to display in the upper half.
+   */
   media: PropTypes.node.isRequired,
-  /** Override the inline-styles of the media container. */
-  mediaBackgroundStyle: PropTypes.object,
-  /** Override the inline-styles of the media. */
-  mediaStyle: PropTypes.object,
-  /** Subtitle of the slide. */
+  /**
+   * Subtitle of the slide.
+   **/
   subtitle: PropTypes.string.isRequired,
-  /** Override the inline-styles of the subtitle. */
-  subtitleStyle: PropTypes.object,
-  /** Override the inline-styles of the text container. */
-  textStyle: PropTypes.object,
-  /** Title of the slide. */
+  /**
+   * Title of the slide.
+   **/
   title: PropTypes.string.isRequired,
-  /** Override the inline-styles of the title. */
-  titleStyle: PropTypes.object,
   /**
    * If `true`, the screen width and height is filled.
    * @ignore
@@ -186,3 +151,5 @@ Slide.propTypes = {
    */
   landscape: PropTypes.bool
 }
+
+export default withStyles(styles)(Slide)
