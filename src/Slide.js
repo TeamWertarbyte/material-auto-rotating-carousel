@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Typography from 'material-ui/Typography'
 import { blue } from 'material-ui/colors'
 import withStyles from 'material-ui/styles/withStyles'
 import classNames from 'classnames'
 
 const styles = {
   root: {
-    color: 'white',
     backgroundColor: blue[500],
     height: '100%'
   },
@@ -61,7 +61,8 @@ const styles = {
     padding: '24px 24px 128px',
     flex: '0 1',
     alignSelf: 'center',
-    textAlign: 'left'
+    textAlign: 'left',
+    margin: 0
   },
   title: {
     fontSize: '24px',
@@ -70,13 +71,15 @@ const styles = {
     marginBottom: 12,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    color: '#fff'
   },
   subtitle: {
     fontSize: '15px',
     fontWeight: 400,
     lineHeight: '18px',
-    margin: 0
+    margin: 0,
+    color: '#fff'
   }
 }
 
@@ -84,23 +87,31 @@ function Slide (props) {
   const {
     classes,
     media,
+    mediaBackgroundStyle,
     subtitle,
     title,
     mobile,
-    landscape: landscapeProp
+    landscape,
+    ...other
   } = props
 
-  const mobileLandscape = mobile && landscapeProp
+  const mobileLandscape = mobile && landscape
 
   return (
-    <div className={classNames(classes.root, {
-      [classes.rootMobile]: mobile,
-      [classes.rootMobileLandscape]: mobileLandscape
-    })}>
-      <div className={classNames(classes.mediaBackground, {
-        [classes.mediaBackgroundMobile]: mobile,
-        [classes.mediaBackgroundMobileLandscape]: mobileLandscape
-      })}>
+    <div
+      className={classNames(classes.root, {
+        [classes.rootMobile]: mobile,
+        [classes.rootMobileLandscape]: mobileLandscape
+      })}
+      {...other}
+    >
+      <div
+        className={classNames(classes.mediaBackground, {
+          [classes.mediaBackgroundMobile]: mobile,
+          [classes.mediaBackgroundMobileLandscape]: mobileLandscape
+        })}
+        style={mediaBackgroundStyle}
+      >
         <div className={classNames(classes.media, {
           [classes.mediaMobile]: mobile,
           [classes.mediaMobileLandscape]: mobileLandscape
@@ -108,16 +119,18 @@ function Slide (props) {
           {media}
         </div>
       </div>
-      <div className={classNames(classes.text, {
-        [classes.textMobile]: mobile,
-        [classes.textMobileLandscape]: mobileLandscape
-      })}>
-        <div className={classes.title}>
+      <div
+        className={classNames(classes.text, {
+          [classes.textMobile]: mobile,
+          [classes.textMobileLandscape]: mobileLandscape
+        })}
+      >
+        <Typography className={classes.title}>
           {title}
-        </div>
-        <p className={classes.subtitle}>
+        </Typography>
+        <Typography className={classes.subtitle}>
           {subtitle}
-        </p>
+        </Typography>
       </div>
     </div>
   )
@@ -133,12 +146,16 @@ Slide.propTypes = {
    */
   media: PropTypes.node.isRequired,
   /**
+   * Override the inline-styles of the media container.
+   */
+  mediaBackgroundStyle: PropTypes.object,
+  /**
    * Subtitle of the slide.
-   **/
+   */
   subtitle: PropTypes.string.isRequired,
   /**
    * Title of the slide.
-   **/
+   */
   title: PropTypes.string.isRequired,
   /**
    * If `true`, the screen width and height is filled.
