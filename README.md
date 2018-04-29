@@ -65,19 +65,30 @@ render() {
 
 ### AutoRotatingCarousel Properties
 
-|Name            |Type        |Default     |Description
-|----------------|------------|------------|--------------------------------
-|autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
-|contentStyle    | `object`   |            | Override the inline-styles of the content container.
-|interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
-|label           | `string`   |            | Button text. If not supplied, the button will be hidden.
-|landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
-|mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
-|open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
-|onChange        | `function` |            | Fired when the index changed. Returns current index.
-|onRequestClose  | `function` |            | Fired when the gray background of the popup is pressed when it is open.
-|onStart         | `function` |            | Fired when the user clicks the getting started button.
-|style           | `object`   |            | Override the inline-styles of the root component.
+|Name                 |Type        |Default     |Description
+|---------------------|------------|------------|--------------------------------
+|arrowIcon            | `object`   |            | Override the inline-styles of the arrow icon.
+|arrowIconButtonStyle | `object`   |            | Override the inline-styles of the arrow icon button.
+|arrowLeftStyle       | `object`   |            | Override the inline-styles of the left arrow.
+|arrowRightStyle      | `object`   |            | Override the inline-styles of the right arrow.
+|autoplay             | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
+|carouselContainer    | `object`   |            | Override the inline-styles of the carousel container.
+|carouselStyle        | `object`   |            | Override the inline-styles of the carousel.
+|carouselWrapperStyle | `object`   |            | Override the inline-styles of the carousel wrapper.
+|contentStyle         | `object`   |            | Override the inline-styles of the content container.
+|dotsStyle            | `object`   |            | Override the inline-styles of the footer dots when not in landscape mode.
+|footerStyle          | `object`   |            | Override the inline-styles of the footer when not in landscape mode.
+|interval             | `integer`  | `3000`     | Delay between auto play transitions (in ms).
+|label                | `string`   |            | Button text. If not supplied, the button will be hidden.
+|landscape            | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
+|mobile               | `bool`     | `false`    | If `true`, the screen width and height is filled.
+|open                 | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
+|onChange             | `function` |            | Fired when the index changed. Returns current index.
+|onRequestClose       | `function` |            | Fired when the gray background of the popup is pressed when it is open.
+|onStart              | `function` |            | Fired when the user clicks the getting started button.
+|style                | `object`   |            | Override the inline-styles of the root component.
+|hideArrows           | `bool`     |            | If `true`, the left and right arrows are hidden in the desktop version.
+
 
 ### Slide Properties
 
