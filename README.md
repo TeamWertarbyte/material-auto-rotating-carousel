@@ -76,8 +76,8 @@ render() {
 |carouselStyle        | `object`   |            | Override the inline-styles of the carousel.
 |carouselWrapperStyle | `object`   |            | Override the inline-styles of the carousel wrapper.
 |contentStyle         | `object`   |            | Override the inline-styles of the content container.
-|dotsStyle            | `object`   |            | Override the inline-styles of the footer dots when not in landscape mode.
-|footerStyle          | `object`   |            | Override the inline-styles of the footer when not in landscape mode.
+|dotsStyle            | `object`   |            | Override the inline-styles of the footer dots.
+|footerStyle          | `object`   |            | Override the inline-styles of the footer.
 |interval             | `integer`  | `3000`     | Delay between auto play transitions (in ms).
 |label                | `string`   |            | Button text. If not supplied, the button will be hidden.
 |landscape            | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
@@ -87,7 +87,7 @@ render() {
 |onRequestClose       | `function` |            | Fired when the gray background of the popup is pressed when it is open.
 |onStart              | `function` |            | Fired when the user clicks the getting started button.
 |style                | `object`   |            | Override the inline-styles of the root component.
-|hideArrows           | `bool`     |            | If `true`, the left and right arrows are hidden in the desktop version.
+|hideArrows           | `bool`     |            | If `true`, the left and right arrow buttons are hidden in the desktop version.
 
 
 ### Slide Properties
