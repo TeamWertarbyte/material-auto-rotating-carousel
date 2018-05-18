@@ -3,62 +3,19 @@
 [![Build Status](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel.svg?branch=next)](https://travis-ci.org/TeamWertarbyte/material-auto-rotating-carousel)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.google.com/growth-communications/onboarding.html#onboarding-top-user-benefits)!
+So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.io/design/communication/onboarding.html#top-user-benefits-model)!
 
-This project implements such a carousel for [material-ui](https://material-ui-next.com). Visit [the styleguide](https://next.mui.wertarbyte.com/#material-auto-rotating-carousel) for an interactive demo.
+This project implements such a carousel for [Material-UI](https://material-ui-next.com). Visit [the styleguide](https://next.mui.wertarbyte.com/#material-auto-rotating-carousel) for an interactive demo.
 
 ![Demo](demo.gif)
 
 ## Installation
 ```shell
-npm i --save material-auto-rotating-carousel@next
+npm i --save material-auto-rotating-carousel
 npm i --save react-swipeable-views
 ```
 
-## Usage
-
-The usage is similar to the usage of [Material UI's tabs](http://www.material-ui.com/#/components/tabs).
-Create AutoRotatingCarousel as a main frame and add Slides as children.
-
-```js
-import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel'
-import { green400, green600, blue400, blue600, red400, red600 } from '@material-ui/core/styles/colors'
-
-// ...
-
-render() {
-  return (
-    <div>
-      <AutoRotatingCarousel
-        label="Get started"
-        open
-      >
-        <Slide
-          media={<img src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png" />}
-          mediaBackgroundStyle={{ backgroundColor: red400 }}
-          style={{ backgroundColor: red600 }}
-          title="This is a very cool feature"
-          subtitle="Just using this will blow your mind."
-        />
-        <Slide
-          media={<img src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png" />}
-          mediaBackgroundStyle={{ backgroundColor: blue400 }}
-          style={{ backgroundColor: blue600 }}
-          title="Ever wanted to be popular?"
-          subtitle="Well just mix two colors and your are good to go!"
-        />
-        <Slide
-          media={<img src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png" />}
-          mediaBackgroundStyle={{ backgroundColor: green400 }}
-          style={{ backgroundColor: green600 }}
-          title="May the force be with you"
-          subtitle="The Force is a metaphysical and ubiquitous power in the Star Wars universe."
-        />
-      </AutoRotatingCarousel>
-    </div>
-  )
-}
-```
+**Note:** This is the version for Material-UI 1.0.0 or later. If you are using Material-UI 1.0.0-beta, you should update to the latest version. If you are still using Material-UI 0.x, you can use our [legacy version][legacy].
 
 ### AutoRotatingCarousel Properties
 
@@ -89,3 +46,5 @@ render() {
 ## License
 
 The files included in this repository are licensed under the MIT license.
+
+[legacy]: https://github.com/TeamWertarbyte/material-auto-rotating-carousel/tree/legacy

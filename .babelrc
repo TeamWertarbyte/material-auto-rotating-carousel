@@ -1,10 +1,11 @@
 {
   "presets": [
-    "es2015",
-    "stage-0",
+    "env",
     "react"
   ],
   "plugins": [
-    ["direct-import", ["@material-ui/core"]]
+    "transform-class-properties",
+    "transform-object-assign",
+    "transform-object-rest-spread"
   ]
 }
