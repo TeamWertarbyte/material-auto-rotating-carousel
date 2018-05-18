@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MuiThemeProvider } from 'material-ui/styles'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 
 export default class Wrapper extends Component {
   render () {

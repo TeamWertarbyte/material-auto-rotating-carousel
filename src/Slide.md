@@ -2,8 +2,8 @@ The `Slide` supports landscape and portrait mode, which will be selected automat
 
 ### Portrait mode
 ```
-const { red } = require('material-ui/colors');
-const { withStyles } = require('material-ui/styles');
+const { red } = require('@material-ui/core/colors');
+const { withStyles } = require('@material-ui/core/styles');
 
 const styles = {
   root: {
@@ -27,8 +27,8 @@ const StyledSlide = withStyles(styles)(Slide);
 
 ### Landscape mode
 ```
-const { red } = require('material-ui/colors');
-const { withStyles } = require('material-ui/styles');
+const { red } = require('@material-ui/core/colors');
+const { withStyles } = require('@material-ui/core/styles');
 
 const styles = {
   root: {

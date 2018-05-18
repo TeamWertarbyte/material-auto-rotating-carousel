@@ -22,7 +22,7 @@ Create AutoRotatingCarousel as a main frame and add Slides as children.
 
 ```js
 import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel'
-import { green400, green600, blue400, blue600, red400, red600 } from 'material-ui/styles/colors'
+import { green400, green600, blue400, blue600, red400, red600 } from '@material-ui/core/styles/colors'
 
 // ...
 

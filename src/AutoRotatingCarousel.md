@@ -2,8 +2,8 @@
 
 ```
 const Slide = require('./Slide').default;
-const { red, blue, green } = require('material-ui/colors');
-const Button = require('material-ui/Button').default;
+const { red, blue, green } = require('@material-ui/core/colors');
+const Button = require('@material-ui/core/Button').default;
 
 <div style={{ position: 'relative', width: '100%', height: 500 }}>
   <Button onClick={() => setState({ open: true })}>Open carousel</Button>

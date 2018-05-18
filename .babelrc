@@ -5,6 +5,6 @@
     "react"
   ],
   "plugins": [
-    ["direct-import", ["material-ui"]]
+    ["direct-import", ["@material-ui/core"]]
   ]
 }
