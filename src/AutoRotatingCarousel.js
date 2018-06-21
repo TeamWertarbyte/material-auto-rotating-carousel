@@ -141,6 +141,7 @@ class AutoRotatingCarousel extends Component {
       autoplay,
       children,
       classes,
+      containerHeight,
       hideArrows,
       interval,
       label,
@@ -157,7 +158,7 @@ class AutoRotatingCarousel extends Component {
       <Carousel
         autoplay={open && autoplay}
         className={classes.carousel}
-        containerStyle={{ height: '100%' }}
+        containerStyle={{ height: containerHeight || '100%' }}
         index={this.state.slideIndex}
         interval={interval}
         onChangeIndex={this.handleChange}
