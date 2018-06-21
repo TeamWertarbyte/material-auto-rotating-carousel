@@ -141,9 +141,11 @@ class AutoRotatingCarousel extends Component {
       autoplay,
       children,
       classes,
+      directionButtonStyle,
       hideArrows,
       interval,
       label,
+      labelButtonStyle,
       landscape: landscapeProp,
       mobile,
       open,
@@ -206,6 +208,7 @@ class AutoRotatingCarousel extends Component {
                 {label && <Button
                   variant='raised'
                   onClick={onStart}
+                  style={labelButtonStyle}
                 >
                   {label}
                 </Button>}
@@ -226,6 +229,7 @@ class AutoRotatingCarousel extends Component {
                   variant='fab'
                   className={classNames(classes.arrow, classes.arrowLeft)}
                   onClick={() => this.decreaseIndex()}
+                  style={directionButtonStyle}
                 >
                   <ArrowBackIcon className={classes.arrowIcon} />
                 </Button>
@@ -233,6 +237,7 @@ class AutoRotatingCarousel extends Component {
                   variant='fab'
                   className={classNames(classes.arrow, classes.arrowRight)}
                   onClick={() => this.increaseIndex()}
+                  style={directionButtonStyle}
                 >
                   <ArrowForwardIcon className={classes.arrowIcon} />
                 </Button>
