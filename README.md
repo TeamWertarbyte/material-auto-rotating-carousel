@@ -19,17 +19,19 @@ npm i --save react-swipeable-views
 
 ### AutoRotatingCarousel Properties
 
-|Name            |Type        |Default     |Description
-|----------------|------------|------------|--------------------------------
-|autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
-|interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
-|label           | `string`   |            | Button text. If not supplied, the button will be hidden.
-|landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
-|mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
-|open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
-|onChange        | `function` |            | Fired when the index changed. Returns current index.
-|onClose         | `function` |            | Fired when the gray background of the popup is pressed when it is open.
-|onStart         | `function` |            | Fired when the user clicks the getting started button.
+|Name            |Type                        |Default     |Description
+|----------------|----------------------------|------------|--------------------------------
+|autoplay        | `bool`                     | `true`     | If `false`, the auto play behavior is disabled.
+|interval        | `integer`                  | `3000`     | Delay between auto play transitions (in ms).
+|label           | `string`                   |            | Button text. If not supplied, the button will be hidden.
+|landscape       | `bool`                     |            | If `true`, slide will adjust content for wide mobile screens.
+|mobile          | `bool`                     | `false`    | If `true`, the screen width and height is filled.
+|open            | `bool`                     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
+|onChange        | `function`                 |            | Fired when the index changed. Returns current index.
+|onClose         | `function`                 |            | Fired when the gray background of the popup is pressed when it is open.
+|onStart         | `function`                 |            | Fired when the user clicks the getting started button.
+|hideBackdrop    | `bool`                     | `false`    | Controls the modal's backdrop.
+|container       | `Dom Object` || `function` | `root`     | Specify the container for the modal.
 
 ### Slide Properties
 

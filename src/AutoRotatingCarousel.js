@@ -142,6 +142,8 @@ class AutoRotatingCarousel extends Component {
       children,
       classes,
       hideArrows,
+      hideBackdrop,
+      container,
       interval,
       label,
       landscape: landscapeProp,
@@ -179,6 +181,8 @@ class AutoRotatingCarousel extends Component {
         open={open}
         onClose={onClose}
         BackdropProps={{ transitionDuration }}
+        hideBackdrop={hideBackdrop}
+        container={container}
       >
         <Fade
           appear
@@ -250,7 +254,8 @@ AutoRotatingCarousel.defaultProps = {
   interval: 3000,
   mobile: false,
   open: false,
-  hideArrows: false
+  hideArrows: false,
+  hideBackdrop: false
 }
 
 AutoRotatingCarousel.propTypes = {
@@ -275,7 +280,14 @@ AutoRotatingCarousel.propTypes = {
   /** Controls whether the AutoRotatingCarousel is opened or not. */
   open: PropTypes.bool,
   /** If `true`, the left and right arrows are hidden in the desktop version. */
-  hideArrows: PropTypes.bool
+  hideArrows: PropTypes.bool,
+  /** Controls the modal's backdrop. */
+  hideBackdrop: PropTypes.bool,
+  /** Specify the container for the modal. Allowing you to embed the carousel in components instead of root */
+  container: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.func,
+  ])
 }
 
 export default withStyles(styles)(AutoRotatingCarousel)
