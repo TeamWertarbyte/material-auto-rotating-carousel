@@ -253,7 +253,7 @@ AutoRotatingCarousel.defaultProps = {
   mobile: false,
   open: false,
   hideArrows: false,
-  colorButton: default
+  colorButton: "default",
 }
 
 AutoRotatingCarousel.propTypes = {
