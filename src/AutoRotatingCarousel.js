@@ -148,7 +148,8 @@ class AutoRotatingCarousel extends Component {
       mobile,
       open,
       onClose,
-      onStart
+      onStart,
+      colorButton
     } = this.props
     const landscape = mobile && landscapeProp
     const transitionDuration = { enter: duration.enteringScreen, exit: duration.leavingScreen }
@@ -206,6 +207,7 @@ class AutoRotatingCarousel extends Component {
                 {label && <Button
                   variant='raised'
                   onClick={onStart}
+                  color={colorButton}
                 >
                   {label}
                 </Button>}
@@ -250,7 +252,8 @@ AutoRotatingCarousel.defaultProps = {
   interval: 3000,
   mobile: false,
   open: false,
-  hideArrows: false
+  hideArrows: false,
+  colorButton: default
 }
 
 AutoRotatingCarousel.propTypes = {
@@ -261,7 +264,7 @@ AutoRotatingCarousel.propTypes = {
   /** Delay between auto play transitions (in ms). */
   interval: PropTypes.number,
   /** Button text. If not supplied, the button will be hidden. */
-  label: PropTypes.object,
+  label: PropTypes.string,
   /** If `true`, slide will adjust content for wide mobile screens. */
   landscape: PropTypes.bool,
   /** If `true`, the screen width and height is filled. */
@@ -275,7 +278,9 @@ AutoRotatingCarousel.propTypes = {
   /** Controls whether the AutoRotatingCarousel is opened or not. */
   open: PropTypes.bool,
   /** If `true`, the left and right arrows are hidden in the desktop version. */
-  hideArrows: PropTypes.bool
+  hideArrows: PropTypes.bool,
+
+  colorButton: PropTypes.string
 }
 
 export default withStyles(styles)(AutoRotatingCarousel)
