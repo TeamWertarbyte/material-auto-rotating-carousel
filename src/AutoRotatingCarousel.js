@@ -147,6 +147,7 @@ class AutoRotatingCarousel extends Component {
       label,
       landscape: landscapeProp,
       mobile,
+      ModalProps,
       open,
       onClose,
       onStart
@@ -181,7 +182,8 @@ class AutoRotatingCarousel extends Component {
         })}
         open={open}
         onClose={onClose}
-        BackdropProps={{ transitionDuration }}
+        BackdropProps={ModalProps ? { transitionDuration, ...ModalProps.BackdropProps } : { transitionDuration }}
+        {...ModalProps}
       >
         <Fade
           appear
@@ -275,6 +277,8 @@ AutoRotatingCarousel.propTypes = {
   landscape: PropTypes.bool,
   /** If `true`, the screen width and height is filled. */
   mobile: PropTypes.bool,
+  /** Properties applied to the [Modal](https://material-ui.com/api/modal/) element. */
+  ModalProps: PropTypes.object,
   /** Fired when the index changed. Returns current index. */
   onChange: PropTypes.func,
   /** Fired when the gray background of the popup is pressed when it is open. */

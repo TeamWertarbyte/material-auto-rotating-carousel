@@ -27,6 +27,7 @@ npm i --save react-swipeable-views
 |label           | `string`   |            | Button text. If not supplied, the button will be hidden.
 |landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.
 |mobile          | `bool`     | `false`    | If `true`, the screen width and height is filled.
+|ModalProps      | `object`   |            | Properties applied to the [Modal](https://material-ui.com/api/modal/) element.
 |open            | `bool`     | `false`    | Controls whether the AutoRotatingCarousel is opened or not.
 |onChange        | `function` |            | Fired when the index changed. Returns current index.
 |onClose         | `function` |            | Fired when the gray background of the popup is pressed when it is open.
