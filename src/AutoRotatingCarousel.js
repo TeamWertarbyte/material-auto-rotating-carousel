@@ -139,6 +139,7 @@ class AutoRotatingCarousel extends Component {
   render () {
     const {
       autoplay,
+      ButtonProps,
       children,
       classes,
       hideArrows,
@@ -208,6 +209,7 @@ class AutoRotatingCarousel extends Component {
                 {label && <Button
                   variant='raised'
                   onClick={onStart}
+                  {...ButtonProps}
                 >
                   {label}
                 </Button>}
@@ -261,6 +263,8 @@ AutoRotatingCarousel.defaultProps = {
 AutoRotatingCarousel.propTypes = {
   /** If `false`, the auto play behavior is disabled. */
   autoplay: PropTypes.bool,
+  /** Properties applied to the [Button](https://material-ui.com/api/button/) element. */
+  ButtonProps: PropTypes.object,
   /** Object for customizing the CSS classes. */
   classes: PropTypes.object.isRequired,
   /** Delay between auto play transitions (in ms). */
