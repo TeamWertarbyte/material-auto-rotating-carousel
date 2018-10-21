@@ -23,6 +23,7 @@ npm i --save react-swipeable-views
 |----------------|------------|------------|--------------------------------
 |autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
 |ButtonProps     | `object`   |            | Properties applied to the [Button](https://material-ui.com/api/button/) element.
+|containerStyle  | `object`   |            | Override the inline-styles of the carousel container.
 |interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
 |label           | `string`   |            | Button text. If not supplied, the button will be hidden.
 |landscape       | `bool`     |            | If `true`, slide will adjust content for wide mobile screens.

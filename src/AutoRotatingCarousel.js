@@ -142,6 +142,7 @@ class AutoRotatingCarousel extends Component {
       ButtonProps,
       children,
       classes,
+      containerStyle,
       hideArrows,
       interval,
       label,
@@ -160,7 +161,7 @@ class AutoRotatingCarousel extends Component {
       <Carousel
         autoplay={open && autoplay && hasMultipleChildren}
         className={classes.carousel}
-        containerStyle={{ height: '100%' }}
+        containerStyle={{ height: '100%', ...containerStyle }}
         index={this.state.slideIndex}
         interval={interval}
         onChangeIndex={this.handleChange}
@@ -269,6 +270,8 @@ AutoRotatingCarousel.propTypes = {
   ButtonProps: PropTypes.object,
   /** Object for customizing the CSS classes. */
   classes: PropTypes.object.isRequired,
+  /** Override the inline-styles of the carousel container. */
+  containerStyle: PropTypes.object,
   /** Delay between auto play transitions (in ms). */
   interval: PropTypes.number,
   /** Button text. If not supplied, the button will be hidden. */
