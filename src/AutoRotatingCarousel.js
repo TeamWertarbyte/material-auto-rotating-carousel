@@ -152,10 +152,11 @@ class AutoRotatingCarousel extends Component {
     } = this.props
     const landscape = mobile && landscapeProp
     const transitionDuration = { enter: duration.enteringScreen, exit: duration.leavingScreen }
+    const hasMultipleChildren = children.length != null
 
     const carousel = (
       <Carousel
-        autoplay={open && autoplay}
+        autoplay={open && autoplay && hasMultipleChildren}
         className={classes.carousel}
         containerStyle={{ height: '100%' }}
         index={this.state.slideIndex}
@@ -163,11 +164,12 @@ class AutoRotatingCarousel extends Component {
         onChangeIndex={this.handleChange}
         slideClassName={classes.slide}
       >
-        {children.map((c, i) => React.cloneElement(c, {
-          mobile,
-          landscape,
-          key: i
-        }))}
+        {
+          React.Children.map(children, c => React.cloneElement(c, {
+            mobile,
+            landscape
+          }))
+        }
       </Carousel>
     )
 
@@ -209,18 +211,21 @@ class AutoRotatingCarousel extends Component {
                 >
                   {label}
                 </Button>}
-                <Dots
-                  count={children.length}
-                  index={modulo(this.state.slideIndex, children.length)}
-                  className={classNames(classes.dots, {
-                    [classes.dotsMobile]: mobile,
-                    [classes.dotsMobileLandscape]: landscape
-                  })}
-                  onDotClick={this.handleChange}
-                />
+                {
+                  hasMultipleChildren &&
+                  <Dots
+                    count={children.length}
+                    index={modulo(this.state.slideIndex, children.length)}
+                    className={classNames(classes.dots, {
+                      [classes.dotsMobile]: mobile,
+                      [classes.dotsMobileLandscape]: landscape
+                    })}
+                    onDotClick={this.handleChange}
+                  />
+                }
               </div>
             </div>
-            {!mobile && !hideArrows && (
+            {!mobile && !hideArrows && hasMultipleChildren && (
               <div>
                 <Button
                   variant='fab'
