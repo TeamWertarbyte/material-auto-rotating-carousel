@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import { grey } from '@material-ui/core/colors'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { duration } from '@material-ui/core/styles/transitions'
-import Fab from '@material-ui/core/Fab';
+import Fab from '@material-ui/core/Fab'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import Modal from '@material-ui/core/Modal'
