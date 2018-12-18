@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import { grey } from '@material-ui/core/colors'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { duration } from '@material-ui/core/styles/transitions'
+import Fab from '@material-ui/core/Fab';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import Modal from '@material-ui/core/Modal'
@@ -210,7 +211,7 @@ class AutoRotatingCarousel extends Component {
                 })}
               >
                 {label && <Button
-                  variant='raised'
+                  variant='contained'
                   onClick={onStart}
                   {...ButtonProps}
                 >
@@ -232,20 +233,18 @@ class AutoRotatingCarousel extends Component {
             </div>
             {!mobile && !hideArrows && hasMultipleChildren && (
               <div>
-                <Button
-                  variant='fab'
+                <Fab
                   className={classNames(classes.arrow, classes.arrowLeft)}
                   onClick={() => this.decreaseIndex()}
                 >
                   <ArrowBackIcon className={classes.arrowIcon} />
-                </Button>
-                <Button
-                  variant='fab'
+                </Fab>
+                <Fab
                   className={classNames(classes.arrow, classes.arrowRight)}
                   onClick={() => this.increaseIndex()}
                 >
                   <ArrowForwardIcon className={classes.arrowIcon} />
-                </Button>
+                </Fab>
               </div>
             )}
           </div>
