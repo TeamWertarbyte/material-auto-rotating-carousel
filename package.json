@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/TeamWertarbyte/material-auto-rotating-carousel#readme",
   "devDependencies": {
-    "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^1.0.0",
+    "@material-ui/core": "^3.6.0",
+    "@material-ui/icons": "^3.0.0",
     "@webpack-blocks/babel6": "^0.4.1",
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-cli": "^6.14.0",
@@ -47,8 +47,8 @@
     "standard": "^10.0.2"
   },
   "peerDependencies": {
-    "@material-ui/core": "^1.0.0",
-    "@material-ui/icons": "^1.0.0",
+    "@material-ui/core": "^3.6.0",
+    "@material-ui/icons": "^3.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-swipeable-views": "^0.12.0"
