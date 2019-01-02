@@ -38,7 +38,11 @@ const styles = {
     maxHeight: 'initial',
     margin: 0,
     top: 0,
-    transform: 'none'
+    transform: 'none',
+
+    '& > $carouselWrapper': {
+      borderRadius: 0
+    }
   },
   arrow: {
     width: 48,
