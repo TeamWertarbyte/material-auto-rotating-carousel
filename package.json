@@ -16,7 +16,7 @@
   },
   "keywords": [
     "react",
-    "material",
+    "material-ui",
     "rotate",
     "intro",
     "react-component"
@@ -43,7 +43,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-styleguidist": "^7.0.14",
-    "react-swipeable-views": "^0.12.0",
+    "react-swipeable-views": "^0.13.3",
     "standard": "^10.0.2"
   },
   "peerDependencies": {
