@@ -5,7 +5,7 @@ const Slide = require('./Slide').default;
 const { red, blue, green } = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
 
-<div style={{ position: 'relative', width: '100%', height: 500 }}>
+<div>
   <Button onClick={() => setState({ open: true })}>Open carousel</Button>
   <AutoRotatingCarousel
     label='Get started'
@@ -46,7 +46,7 @@ const Slide = require('./Slide').default;
 const { red, blue, green } = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
 
-<div style={{ position: 'relative', width: '100%', height: 500 }}>
+<div>
   <Button onClick={() => setState({ open: true })}>Open carousel</Button>
   <AutoRotatingCarousel
     label='Get started'
