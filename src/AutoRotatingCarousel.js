@@ -10,6 +10,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import Modal from '@material-ui/core/Modal'
 import Fade from '@material-ui/core/Fade'
+import Backdrop from '@material-ui/core/Backdrop'
 import Dots from 'material-ui-dots'
 import classNames from 'classnames'
 import Carousel from './SwipableCarouselView'
@@ -188,6 +189,7 @@ class AutoRotatingCarousel extends Component {
         })}
         open={open}
         onClose={onClose}
+        BackdropComponent={Backdrop}
         BackdropProps={ModalProps ? { transitionDuration, ...ModalProps.BackdropProps } : { transitionDuration }}
         {...ModalProps}
       >
