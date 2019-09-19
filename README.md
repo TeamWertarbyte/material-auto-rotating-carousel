@@ -46,6 +46,9 @@ npm i --save react-swipeable-views
 
 \* required property
 
+## Example
+[![Edit material-auto-rotating-carousel example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mystifying-varahamihira-dphsr?fontsize=14)
+
 ## License
 
 The files included in this repository are licensed under the MIT license.
