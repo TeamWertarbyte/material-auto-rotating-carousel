@@ -14,7 +14,7 @@ import Backdrop from '@material-ui/core/Backdrop'
 import Dots from 'material-ui-dots'
 import classNames from 'classnames'
 import Carousel from './SwipableCarouselView'
-import { modulo } from './util'
+import { bounded, modulo } from './util'
 
 const styles = {
   root: {
@@ -50,6 +50,10 @@ const styles = {
     height: 48,
     position: 'absolute',
     top: 'calc((100% - 96px) / 2 + 24px)'
+  },
+  arrowDisabled: {
+    opacity: 0.5,
+    cursor: 'default'
   },
   arrowLeft: {
     left: -96
@@ -116,21 +120,22 @@ class AutoRotatingCarousel extends Component {
 
   handleContentClick = (e) => e.stopPropagation() || e.preventDefault()
 
-  handleChange = (slideIndex) => {
+  handleChange = (index) => {
+    const slideIndex = this.getIndex(index, this.slideCount)
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
   }
 
   decreaseIndex () {
-    const slideIndex = this.state.slideIndex - 1
+    const slideIndex = this.getIndex(this.state.slideIndex - 1, this.slideCount)
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
   }
 
   increaseIndex () {
-    const slideIndex = this.state.slideIndex + 1
+    const slideIndex = this.getIndex(this.state.slideIndex + 1, this.slideCount)
     this.setState({
       slideIndex
     }, this.onChange(slideIndex))
@@ -138,8 +143,18 @@ class AutoRotatingCarousel extends Component {
 
   onChange (slideIndex) {
     if (this.props.onChange) {
-      this.props.onChange(modulo(slideIndex, this.props.children.length))
+      this.props.onChange(this.getIndex(slideIndex, this.slideCount))
     }
+  }
+
+  getIndex (idx, n) {
+    const { circular } = this.props
+    const indexer = circular ? modulo : bounded
+    return indexer(idx, n)
+  }
+
+  get slideCount () {
+    return this.props.children.length
   }
 
   render () {
@@ -147,6 +162,7 @@ class AutoRotatingCarousel extends Component {
       autoplay,
       ButtonProps,
       children,
+      circular,
       classes,
       containerStyle,
       hideArrows,
@@ -161,7 +177,10 @@ class AutoRotatingCarousel extends Component {
     } = this.props
     const landscape = mobile && landscapeProp
     const transitionDuration = { enter: duration.enteringScreen, exit: duration.leavingScreen }
-    const hasMultipleChildren = children.length != null
+    const hasMultipleChildren = this.slideCount != null
+
+    const disableLeftArrow = !circular && this.state.slideIndex === 0
+    const disableRightArrow = !circular && this.state.slideIndex === this.slideCount - 1
 
     const carousel = (
       <Carousel
@@ -226,8 +245,8 @@ class AutoRotatingCarousel extends Component {
                 {
                   hasMultipleChildren &&
                   <Dots
-                    count={children.length}
-                    index={modulo(this.state.slideIndex, children.length)}
+                    count={this.slideCount}
+                    index={this.getIndex(this.state.slideIndex, this.slideCount)}
                     className={classNames(classes.dots, {
                       [classes.dotsMobile]: mobile,
                       [classes.dotsMobileLandscape]: landscape
@@ -240,14 +259,16 @@ class AutoRotatingCarousel extends Component {
             {!mobile && !hideArrows && hasMultipleChildren && (
               <div>
                 <Fab
-                  className={classNames(classes.arrow, classes.arrowLeft)}
+                  className={classNames(classes.arrow, classes.arrowLeft, { [classes.arrowDisabled]: disableLeftArrow })}
                   onClick={() => this.decreaseIndex()}
+                  disableRipple={disableLeftArrow}
                 >
                   <ArrowBackIcon className={classes.arrowIcon} />
                 </Fab>
                 <Fab
-                  className={classNames(classes.arrow, classes.arrowRight)}
+                  className={classNames(classes.arrow, classes.arrowRight, { [classes.arrowDisabled]: disableRightArrow })}
                   onClick={() => this.increaseIndex()}
+                  disableRipple={disableRightArrow}
                 >
                   <ArrowForwardIcon className={classes.arrowIcon} />
                 </Fab>
@@ -265,7 +286,8 @@ AutoRotatingCarousel.defaultProps = {
   interval: 3000,
   mobile: false,
   open: false,
-  hideArrows: false
+  hideArrows: false,
+  circular: true
 }
 
 AutoRotatingCarousel.propTypes = {
@@ -296,7 +318,9 @@ AutoRotatingCarousel.propTypes = {
   /** Controls whether the AutoRotatingCarousel is opened or not. */
   open: PropTypes.bool,
   /** If `true`, the left and right arrows are hidden in the desktop version. */
-  hideArrows: PropTypes.bool
+  hideArrows: PropTypes.bool,
+  /** If `false`, the carousel becomes non-circular and its buttons are disabled in the boundaries. */
+  circular: PropTypes.bool
 }
 
 export default withStyles(styles)(AutoRotatingCarousel)
