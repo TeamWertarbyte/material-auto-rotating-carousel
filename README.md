@@ -5,7 +5,7 @@
 
 So you wrote a great app and deployed it and everything. But how do you introduce new users to your app? Well, the Material design guidelines have a solution: Displaying the top benefits in a beautiful [auto-rotating carousel](https://material.io/design/communication/onboarding.html#top-user-benefits-model)!
 
-This project implements such a carousel for [Material-UI](https://material-ui-next.com). Visit [the styleguide](https://next.mui.wertarbyte.com/#material-auto-rotating-carousel) for an interactive demo.
+This project implements such a carousel for [Material-UI](https://material-ui-next.com). Visit [the styleguide](https://mui.wertarbyte.com/#material-auto-rotating-carousel) for an interactive demo.
 
 ![Demo](demo.gif)
 
