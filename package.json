@@ -55,8 +55,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "keycode": "^2.2.0",
     "material-ui-dots": "^2.0.0",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-event-listener": "^0.6.6"
   },
   "standard": {
     "parser": "babel-eslint"
