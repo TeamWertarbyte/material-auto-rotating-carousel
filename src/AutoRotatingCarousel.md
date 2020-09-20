@@ -5,13 +5,15 @@ const Slide = require('./Slide').default;
 const { red, blue, green } = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
 
+const [open, setOpen] = React.useState(false);
+
 <div>
-  <Button onClick={() => setState({ open: true })}>Open carousel</Button>
+  <Button onClick={() => setOpen(true)}>Open carousel</Button>
   <AutoRotatingCarousel
     label='Get started'
-    open={state.open}
-    onClose={() => setState({ open: false })}
-    onStart={() => setState({ open: false })}
+    open={open}
+    onClose={() => setOpen(false)}
+    onStart={() => setOpen(false)}
     style={{ position: 'absolute' }}
   >
     <Slide
@@ -46,13 +48,15 @@ const Slide = require('./Slide').default;
 const { red, blue, green } = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
 
+const [open, setOpen] = React.useState(false);
+
 <div>
-  <Button onClick={() => setState({ open: true })}>Open carousel</Button>
+  <Button onClick={() => setOpen(true)}>Open carousel</Button>
   <AutoRotatingCarousel
     label='Get started'
-    open={state.open}
-    onClose={() => setState({ open: false })}
-    onStart={() => setState({ open: false })}
+    open={open}
+    onClose={() => setOpen(false)}
+    onStart={() => setOpen(false)}
     mobile
     autoplay={false}
     style={{ position: 'absolute' }}
