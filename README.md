@@ -41,13 +41,13 @@ npm i --save react-swipeable-views
 |Name                   |Type       |Default      |Description
 |-----------------------|-----------|-------------|--------------------------------
 |classes                | `object`  |             | Object for customizing the CSS classes.
+|landscape              | `bool`    |             | If `true`, slide will adjust content for wide mobile screens (automatically set by `AutoRotatingCarousel`).
 |media*                 | `node`    |             | Object to display in the upper half.
 |mediaBackgroundStyle   | `object`  |             | Override the inline-styles of the media container.
+|mobile                 | `bool`    |             | If `true`, the screen width and height is filled (automatically set by `AutoRotatingCarousel`).
 |style                  | `object`  |             | Override the inline-styles of the slide.
 |subtitle*              | `string`  |             | Subtitle for the slide.
 |title*                 | `string`  |             | Title for the slide.
-|mobile                 | `bool`    |             | If `true`, the screen width and height is filled.
-|landscape              | `bool`    |             | If `true`, slide will adjust content for wide mobile screens.
 
 \* required property
 
