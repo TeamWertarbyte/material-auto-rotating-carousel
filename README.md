@@ -23,6 +23,7 @@ npm i --save react-swipeable-views
 |----------------|------------|------------|--------------------------------
 |autoplay        | `bool`     | `true`     | If `false`, the auto play behavior is disabled.
 |ButtonProps     | `object`   |            | Properties applied to the [Button](https://material-ui.com/api/button/) element.
+|classes         | `object`   |            | Object for customizing the CSS classes.
 |containerStyle  | `object`   |            | Override the inline-styles of the carousel container.
 |interval        | `integer`  | `3000`     | Delay between auto play transitions (in ms).
 |label           | `string`   |            | Button text. If not supplied, the button will be hidden.
@@ -33,16 +34,20 @@ npm i --save react-swipeable-views
 |onChange        | `function` |            | Fired when the index changed. Returns current index.
 |onClose         | `function` |            | Fired when the gray background of the popup is pressed when it is open.
 |onStart         | `function` |            | Fired when the user clicks the getting started button.
+|hideArrows      | `function` |            | If `true`, the left and right arrows are hidden in the desktop version.
 
 ### Slide Properties
 
 |Name                   |Type       |Default      |Description
 |-----------------------|-----------|-------------|--------------------------------
+|classes                | `object`  |             | Useful to extend the style applied to components.
 |media*                 | `node`    |             | Object to display in the upper half.
 |mediaBackgroundStyle   | `object`  |             | Override the inline-styles of the media container.
 |style                  | `object`  |             | Override the inline-styles of the slide.
 |subtitle*              | `string`  |             | Subtitle for the slide.
 |title*                 | `string`  |             | Title for the slide.
+|mobile                 | `bool`    |             | If `true`, the screen width and height is filled.
+|landscape              | `bool`    |             | If `true`, slide will adjust content for wide mobile screens.
 
 \* required property
 
