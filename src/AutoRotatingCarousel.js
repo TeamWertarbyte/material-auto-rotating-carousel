@@ -15,6 +15,7 @@ import Dots from 'material-ui-dots'
 import classNames from 'classnames'
 import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
+import { Typography } from '@material-ui/core'
 
 const styles = {
   root: {
@@ -114,6 +115,12 @@ class AutoRotatingCarousel extends Component {
     slideIndex: 0
   }
 
+  componentDidUpdate(prevProps) {
+    if(prevProps.currentIndex !== this.props.currentIndex) {
+      this.handleChange(this.props.currentIndex);
+    }
+  }
+
   handleContentClick = (e) => e.stopPropagation() || e.preventDefault()
 
   handleChange = (slideIndex) => {
@@ -157,7 +164,8 @@ class AutoRotatingCarousel extends Component {
       ModalProps,
       open,
       onClose,
-      onStart
+      onStart,
+      footer,
     } = this.props
     const landscape = mobile && landscapeProp
     const transitionDuration = { enter: duration.enteringScreen, exit: duration.leavingScreen }
@@ -216,25 +224,33 @@ class AutoRotatingCarousel extends Component {
                   [classes.footerMobileLandscape]: landscape
                 })}
               >
-                {label && <Button
-                  variant='contained'
-                  onClick={onStart}
-                  {...ButtonProps}
-                >
-                  {label}
-                </Button>}
-                {
-                  hasMultipleChildren &&
-                  <Dots
-                    count={children.length}
-                    index={modulo(this.state.slideIndex, children.length)}
-                    className={classNames(classes.dots, {
-                      [classes.dotsMobile]: mobile,
-                      [classes.dotsMobileLandscape]: landscape
-                    })}
-                    onDotClick={this.handleChange}
-                  />
-                }
+                {!!footer ? (
+                  <>
+                    {footer}
+                  </>
+                ) : (
+                  <>
+                    {label && <Button
+                      variant='contained'
+                      onClick={onStart}
+                      {...ButtonProps}
+                    >
+                      {label}
+                    </Button>}
+                    {
+                      hasMultipleChildren &&
+                      <Dots
+                        count={children.length}
+                        index={modulo(this.state.slideIndex, children.length)}
+                        className={classNames(classes.dots, {
+                          [classes.dotsMobile]: mobile,
+                          [classes.dotsMobileLandscape]: landscape
+                        })}
+                        onDotClick={this.handleChange}
+                      />
+                    }
+                  </>
+                )}
               </div>
             </div>
             {!mobile && !hideArrows && hasMultipleChildren && (
@@ -296,7 +312,11 @@ AutoRotatingCarousel.propTypes = {
   /** Controls whether the AutoRotatingCarousel is opened or not. */
   open: PropTypes.bool,
   /** If `true`, the left and right arrows are hidden in the desktop version. */
-  hideArrows: PropTypes.bool
+  hideArrows: PropTypes.bool,
+  /** Object to display in the bottom half. */
+  footer: PropTypes.node,
+  /** Index of the image. */
+  currentIndex: PropTypes.number
 }
 
 export default withStyles(styles)(AutoRotatingCarousel)

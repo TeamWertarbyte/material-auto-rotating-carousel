@@ -35,6 +35,8 @@ npm i --save react-swipeable-views
 |onChange        | `function` |            | Fired when the index changed. Returns current index.
 |onClose         | `function` |            | Fired when the gray background of the popup is pressed when it is open.
 |onStart         | `function` |            | Fired when the user clicks the getting started button.
+|footer          | `node`     |            | Object to display in the bottom half.
+|currentIndex    | `number`   |            | Set the current index of the carousel.
 
 ### Slide Properties
 
@@ -48,6 +50,7 @@ npm i --save react-swipeable-views
 |style                  | `object`  |             | Override the inline-styles of the slide.
 |subtitle*              | `string`  |             | Subtitle for the slide.
 |title*                 | `string`  |             | Title for the slide.
+|noFooter               | `bool`    |             | If `true`, the slide will not have a footer.
 
 \* required property
 
