@@ -62,3 +62,10 @@ npm i --save react-swipeable-views
 The files included in this repository are licensed under the MIT license.
 
 [legacy]: https://github.com/TeamWertarbyte/material-auto-rotating-carousel/tree/legacy
+
+
+## Build and deploy
+
+npm run prepublish
+
+npm publish

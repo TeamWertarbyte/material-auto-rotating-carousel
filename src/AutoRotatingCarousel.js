@@ -15,7 +15,7 @@ import Dots from 'material-ui-dots'
 import classNames from 'classnames'
 import Carousel from './SwipableCarouselView'
 import { modulo } from './util'
-import { Typography } from '@material-ui/core'
+import { Fragment } from '@material-ui/core'
 
 const styles = {
   root: {
@@ -225,11 +225,11 @@ class AutoRotatingCarousel extends Component {
                 })}
               >
                 {!!footer ? (
-                  <>
+                  <Fragment>
                     {footer}
-                  </>
+                  </Fragment>
                 ) : (
-                  <>
+                  <Fragment>
                     {label && <Button
                       variant='contained'
                       onClick={onStart}
@@ -249,7 +249,7 @@ class AutoRotatingCarousel extends Component {
                         onDotClick={this.handleChange}
                       />
                     }
-                  </>
+                  </Fragment>
                 )}
               </div>
             </div>
