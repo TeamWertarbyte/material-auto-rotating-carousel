@@ -92,6 +92,7 @@ function Slide (props) {
     title,
     mobile,
     landscape,
+    noFooter = false,
     ...other
   } = props
 
@@ -119,19 +120,21 @@ function Slide (props) {
           {media}
         </div>
       </div>
-      <div
-        className={classNames(classes.text, {
-          [classes.textMobile]: mobile,
-          [classes.textMobileLandscape]: mobileLandscape
-        })}
-      >
-        <Typography className={classes.title}>
-          {title}
-        </Typography>
-        <Typography className={classes.subtitle}>
-          {subtitle}
-        </Typography>
-      </div>
+      {!noFooter && (
+        <div
+          className={classNames(classes.text, {
+            [classes.textMobile]: mobile,
+            [classes.textMobileLandscape]: mobileLandscape
+          })}
+        >
+          <Typography className={classes.title}>
+            {title}
+          </Typography>
+          <Typography className={classes.subtitle}>
+            {subtitle}
+          </Typography>
+        </div>
+      )}
     </div>
   )
 }
@@ -152,11 +155,11 @@ Slide.propTypes = {
   /**
    * Subtitle of the slide.
    */
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   /**
    * Title of the slide.
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /**
    * If `true`, the screen width and height is filled.
    * @ignore
@@ -166,7 +169,12 @@ Slide.propTypes = {
    * If `true`, slide will adjust content for wide mobile screens.
    * @ignore
    */
-  landscape: PropTypes.bool
+  landscape: PropTypes.bool,
+  /**
+   * If `true`, slide will not have any footer
+   * @ignore
+   */
+  noFooter: PropTypes.bool
 }
 
 export default withStyles(styles)(Slide)

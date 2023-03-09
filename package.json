@@ -1,6 +1,6 @@
 {
-  "name": "material-auto-rotating-carousel",
-  "version": "3.0.2",
+  "name": "@invenso/material-rotating-carousel",
+  "version": "3.2.1",
   "description": "Introduce new users to your app with this material style carousel",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeamWertarbyte/material-auto-rotating-carousel.git"
+    "url": "git+https://github.com/InvensoGroup/material-rotating-carousel.git"
   },
   "keywords": [
     "react",
@@ -21,12 +21,12 @@
     "intro",
     "react-component"
   ],
-  "author": "Wertarbyte <kontakt@wertarbyte.com> (https://wertarbyte.com)",
+  "author": "Invenso <jeroen.aalders@invenso.nl> (https://invenso.nl)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TeamWertarbyte/material-auto-rotating-carousel/issues"
+    "url": "https://github.com/InvensoGroup/material-rotating-carousel/issues"
   },
-  "homepage": "https://github.com/TeamWertarbyte/material-auto-rotating-carousel#readme",
+  "homepage": "https://github.com/InvensoGroup/material-rotating-carousel#readme",
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
@@ -40,7 +40,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-styleguidist": "^11.1.0",
-    "react-swipeable-views": "^0.13.3",
+    "react-swipeable-views": "^0.14.0",
     "standard": "^10.0.2",
     "webpack": "^4.44.2"
   },
@@ -49,15 +49,18 @@
     "@material-ui/icons": "^3.0.0 || ^4.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
-    "react-swipeable-views": "^0.13.3",
-    "react-swipeable-views-utils": "^0.13.3"
+    "react-swipeable-views": "^0.14.0",
+    "react-swipeable-views-utils": "^0.14.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-ui-dots": "^2.0.0",
+    "@invenso/material-ui-dots": "^2.1.0",
     "prop-types": "^15.5.8"
   },
   "standard": {
     "parser": "babel-eslint"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
