@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "material-ui-dots": "^2.0.0",
+    "@invenso/material-ui-dots": "^2.1.0",
     "prop-types": "^15.5.8"
   },
   "standard": {
